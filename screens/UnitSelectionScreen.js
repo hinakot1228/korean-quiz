@@ -5,13 +5,22 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>ドラマの名言で覚える</Text>
-      <Text>韓国語</Text>
-      <StatusBar style="auto" />
       <TouchableOpacity
         onPress={() => alert('Hello, world!')}
-        style={{ backgroundColor: 'black' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>始める</Text>
+        style={{ backgroundColor: 'blue' }}>
+        <Text style={{ fontSize: 20, color: '#fff' }}>←</Text>
+      </TouchableOpacity>
+      <Text style={styles.instructions}>
+        ドラマの名言で覚える韓国語
+      </Text>
+
+      <Text style={styles.instructions}>
+        どの年のドラマにしますか？
+      </Text>
+
+      <TouchableOpacity
+        style={{ backgroundColor: 'blue' }}>
+        <Text style={{ fontSize: 20, color: '#fff' }}>2021</Text>
       </TouchableOpacity>
     </View>
   );
