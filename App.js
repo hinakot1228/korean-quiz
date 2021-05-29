@@ -4,12 +4,18 @@ import { createStackNavigator } from 'react-navigation-stack';
 import StartScreen from './screens/startScreen';
 import UnitSelectionScreen from './screens/unitSelectionScreen';
 import QuestionScreen from './screens/questionScreen';
+import CorrectAnswerScreen from './screens/correctAnswerScreen';
+import IncorrectAnswerScreen from './screens/incorrectAnswerScreen';
+import ScoreScreen from './screens/scoreScreen';
 
 const MainStack = createStackNavigator(
   {
     Start: StartScreen,
     UnitSelection: UnitSelectionScreen,
     Question: QuestionScreen,
+    CorrectAnswer: CorrectAnswerScreen,
+    IncorrectAnswer: IncorrectAnswerScreen,
+    Score: ScoreScreen,
   }
 )
 
@@ -23,27 +29,3 @@ export default class App extends Component {
     )
   }
 }
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>ドラマの名言で覚える</Text>
-//       <Text>韓国語</Text>
-//       <StatusBar style="auto" />
-//       <TouchableOpacity
-//         onPress={() => alert('Hello, world!')}
-//         style={{ backgroundColor: 'black' }}>
-//         <Text style={{ fontSize: 20, color: '#fff' }}>始める</Text>
-//       </TouchableOpacity>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
