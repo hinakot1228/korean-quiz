@@ -19,6 +19,8 @@
 # 3. 使用技術
 - React Native
 - Expo
+- React Navigation
+- React Native Elements
 
 # 4. デザインカンプ
 ![スクリーンショット 2021-05-28 124701](https://user-images.githubusercontent.com/74905456/119926830-165a4d00-bfb3-11eb-89bd-350e6fbdfb19.png)
