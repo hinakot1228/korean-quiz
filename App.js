@@ -3,11 +3,13 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import StartScreen from './screens/startScreen';
 import UnitSelectionScreen from './screens/unitSelectionScreen';
+import QuestionScreen from './screens/questionScreen';
 
 const MainStack = createStackNavigator(
   {
     Start: StartScreen,
     UnitSelection: UnitSelectionScreen,
+    Question: QuestionScreen,
   }
 )
 
