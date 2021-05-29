@@ -1,30 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { Header, Button, Icon } from 'react-native-elements';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
-        style={{ backgroundColor: 'blue' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>←</Text>
-      </TouchableOpacity>
-      <Text style={styles.instructions}>
-        ドラマの名言で覚える韓国語
-      </Text>
-
-      <Text style={styles.instructions}>
-        どの年のドラマにしますか？
-      </Text>
-
-      <TouchableOpacity
-        style={{ backgroundColor: 'blue' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>2021</Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
+export default class UnitSelectionScreen extends Component {
+    render() {
+      return (
+        <>
+          <Header
+            leftComponent={{ icon: 'chevron-left', color: '#fff' }}
+            centerComponent={{ text: 'ドラマの名言で覚える韓国語', style: { color: '#fff' } }}
+            rightComponent={{ icon: 'home', color: '#fff' }}
+          />
+          <Button 
+            title="2020年のドラマ"
+            onPress={() => {
+              this.props.navigation.navigate('Question')
+            }}
+           />
+        </>
+      );
+    }
+  }
 
 const styles = StyleSheet.create({
   container: {

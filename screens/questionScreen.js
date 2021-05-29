@@ -1,35 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { StyleSheet, View, Image } from 'react-native';
+import {Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
-        style={{ backgroundColor: 'blue' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>←</Text>
-      </TouchableOpacity>
-      <Text style={styles.instructions}>
-        2020年のドラマ
-      </Text>
-
-      <Text style={styles.instructions}>
-        Q.1
-      </Text>
-      <Text style={styles.instructions}>
-        以下のセリフを韓国語にしてみよう。
-      </Text>
-      <Text style={styles.instructions}>
-        セリフ文
-      </Text>
-
-      <TouchableOpacity
-        style={{ backgroundColor: 'blue' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>選択肢</Text>
-      </TouchableOpacity>
-    </View>
-  );
+export default class QuestionScreen extends Component {
+  render() {
+    return (
+      <>
+        <Header
+          leftComponent={{ icon: 'chevron-left', color: '#fff' }}
+          centerComponent={{ text: '2020年のドラマ', style: { color: '#fff' } }}
+          rightComponent={{ icon: 'home', color: '#fff' }}
+        />
+        <Card>
+          <Card.Title>Q.1</Card.Title>
+          <Card.Divider/>
+          <Text style={{marginBottom: 10}}>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </Text>
+        </Card>
+        <Button
+          title="答え〇"
+          type="outline"
+          onPress={() => {
+            this.props.navigation.navigate('CorrectAnswer')
+          }}
+        />
+        <Button
+          title="答え×"
+          type="outline"
+          onPress={() => {
+            this.props.navigation.navigate('IncorrectAnswer')
+          }}
+        />
+      </>
+    );
+  }
 }
 
 const styles = StyleSheet.create({

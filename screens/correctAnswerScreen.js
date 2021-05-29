@@ -1,39 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { StyleSheet, View, Image } from 'react-native';
+import {Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => alert('Hello, world!')}
-        style={{ backgroundColor: 'blue' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>←</Text>
-      </TouchableOpacity>
-      <Text style={styles.instructions}>
-        2020年のドラマ
-      </Text>
+export default class CorrectAnswerScreen extends Component {
+  render() {
+    return (
+      <>
+        <Header
+          leftComponent={{ icon: 'chevron-left', color: '#fff' }}
+          centerComponent={{ text: '2020年のドラマ', style: { color: '#fff' } }}
+          rightComponent={{ icon: 'home', color: '#fff' }}
+        />
+        <Card>
+          <Card.Title>Q.1</Card.Title>
+          <Card.Divider/>
+          <Text style={{marginBottom: 10}}>
+            正解〇
+          </Text>
+        </Card>
+        <Card>
+          <Card.Title>解説</Card.Title>
+          <Card.Divider/>
+          <Text style={{marginBottom: 10}}>
+            韓国語文章
+          </Text>
+          <Text style={{marginBottom: 10}}>
+            日本語解説
+          </Text>
 
-      <Text style={styles.instructions}>
-        Q.1
-      </Text>
-      <Text style={styles.instructions}>
-        〇
-      </Text>
-
-      <Text style={styles.instructions}>
-        解説
-      </Text>
-      <Text style={styles.instructions}>
-        解説文
-      </Text>
-
-      <TouchableOpacity
-        style={{ backgroundColor: 'blue' }}>
-        <Text style={{ fontSize: 20, color: '#fff' }}>次の問題へ</Text>
-      </TouchableOpacity>
-    </View>
-  );
+          <Button
+            title="次の問題へ"
+            onPress={() => {
+              this.props.navigation.navigate('Score')
+            }}
+          />
+        </Card>
+      </>
+    );
+  }  
 }
 
 const styles = StyleSheet.create({

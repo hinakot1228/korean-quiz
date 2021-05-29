@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { StyleSheet, View, Image } from 'react-native';
 import {Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
 
-export default class ScoreScreen extends Component {
+export default class IncorrectAnswerScreen extends Component {
   render() {
     return (
       <>
@@ -13,18 +13,28 @@ export default class ScoreScreen extends Component {
           rightComponent={{ icon: 'home', color: '#fff' }}
         />
         <Card>
-          <Card.Title>スコア</Card.Title>
+          <Card.Title>Q.1</Card.Title>
           <Card.Divider/>
           <Text style={{marginBottom: 10}}>
-            〇/〇点
+            不正解×
           </Text>
         </Card>
-        <Button
-          title="トップに戻る"
-          onPress={() => {
-            this.props.navigation.navigate('Start')
-          }}
-        />
+        <Card>
+          <Card.Title>ヒント</Card.Title>
+          <Card.Divider/>
+          <Text style={{marginBottom: 10}}>
+            韓国語文章
+          </Text>
+          <Text style={{marginBottom: 10}}>
+            日本語解説
+          </Text>
+          <Button
+            title="もう一度解く"
+            onPress={() => {
+              this.props.navigation.navigate('Question')
+            }}
+          />
+        </Card>
       </>
     );
   }  
