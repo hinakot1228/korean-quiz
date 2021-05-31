@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import StartScreen from './screens/startScreen';
-import UnitSelectionScreen from './screens/unitSelectionScreen';
+import UnitSelectionScreen from './screens/UnitSelectionScreen';
 import QuestionScreen from './screens/questionScreen';
 import CorrectAnswerScreen from './screens/correctAnswerScreen';
 import IncorrectAnswerScreen from './screens/incorrectAnswerScreen';
