@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import {Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
 
 export default class startScreen extends Component {
     render() {
@@ -8,12 +9,12 @@ export default class startScreen extends Component {
           <Text>ドラマの名言で覚える</Text>
         	<Text>韓国語</Text>
           <Button
-            title="始める"
-						style={{ backgroundColor: 'black', fontSize: 20, color: '#fff' }}
-            onPress={() => {
-              this.props.navigation.navigate('UnitSelection')
-            }}
-          />
+          title="始める"
+          type="outline"
+          onPress={() => {
+            this.props.navigation.navigate('UnitSelection')
+          }}
+        />
         </View>
       )
     }

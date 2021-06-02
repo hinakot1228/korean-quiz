@@ -2,38 +2,94 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { StyleSheet, View, Image } from 'react-native';
 import {Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
+import {
+  MatchingQuestion,
+  MultipleChoiceQuestion,
+  QuizContainer,
+  WritingQuestion,
+} from 'react-native-quiz-maker';
 
 export default class QuestionScreen extends Component {
   render() {
     return (
-      <>
-        <Header
-          leftComponent={{ icon: 'chevron-left', color: '#fff' }}
-          centerComponent={{ text: '2020年のドラマ', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
+      <View style={styles.container}>
+        <QuizContainer
+        questions={[
+          {
+            questionType: 'MultipleChoice',
+            question: '俺の価値をお前が決めるな。',
+            answer: '내 가치를 네가 정하지 마.',
+            allChoices: ['네 가치를 내가 정하지 마.', 
+                         '내 가치를 네가 정하지 마.', 
+                         '내 같이를 네가 정하지 마.', 
+                         '내 가치를 네가 정해라.'],
+            instructionText: '以下のセリフを韓国語にしてみよう。',
+          },
+          {
+            questionType: 'MultipleChoice',
+            question: '子どもは親の背中を見て大きくなるんだってね',
+            answer: '아이는 부모의 등짝을 보고 큰다면서요.',
+            allChoices: ['사랑은 부모의 배를 보고 큰다면서요.', 
+                         '아이는 부모의 등짝을 보고 크는다면서요.', 
+                         '아이는 부모의 등짝을 보고 큰다면서요.', 
+                         '아이는 부모의 등작을 보고 큰다면서요.'],
+            instructionText: '以下のセリフを韓国語にしてみよう。',
+          },
+          {
+            questionType: 'MultipleChoice',
+            question: '살아만 있다면 뭐든 별게 아니야.',
+            answer: '',
+            allChoices: ['生きてさえいれば何だってたいしたことない', 
+                         '愛してさえいれば何だってたいしたことない', 
+                         '生きてさえいれば何だって星ではない', 
+                         '生きていれば何だってたいしたことない'],
+            instructionText: '以下のセリフを日本語にしてみよう。',
+          },
+          {
+            questionType: 'MultipleChoice',
+            question: '望んだとおりに全てを手に入れる。それがまさに僕の夢だから',
+            answer: '원하는 대로 다 가질 거야. 그게 바로 내 꿈일 테니까',
+            allChoices: ['원하는 만큼 다 가질 거야. 그게 바로 내 꿈일 테니까', 
+                         '원하는 대로 다 가질 거야. 그게 바로 내 꼼일 테니까', 
+                         '원하는 대로 다 가질 거야. 그게 바로 내 꿈일 테니까', 
+                         '원하는 대로 다 가지을 거야. 그게 바로 내 꿈이을 테니까'],
+            instructionText: '以下のセリフを日本語にしてみよう。',
+          },
+          
+        ]}
+        onSubmit={(isCorrect: boolean) => console.log(isCorrect)}
+        onComplete={(progress: number) => console.log('score: ', progress)}
         />
-        <Card>
-          <Card.Title>Q.1</Card.Title>
-          <Card.Divider/>
-          <Text style={{marginBottom: 10}}>
-            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-          </Text>
-        </Card>
-        <Button
-          title="答え〇"
-          type="outline"
-          onPress={() => {
-            this.props.navigation.navigate('CorrectAnswer')
-          }}
-        />
-        <Button
-          title="答え×"
-          type="outline"
-          onPress={() => {
-            this.props.navigation.navigate('IncorrectAnswer')
-          }}
-        />
-      </>
+      </View>
+
+      // <>
+      //   <Header
+      //     leftComponent={{ icon: 'chevron-left', color: '#fff' }}
+      //     centerComponent={{ text: '2020年のドラマ', style: { color: '#fff' } }}
+      //     rightComponent={{ icon: 'home', color: '#fff' }}
+      //   />
+      //   <Card>
+      //     <Card.Title>Q.1</Card.Title>
+      //     <Card.Divider/>
+      //     <Text style={{marginBottom: 10}}>
+      //       テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      //     </Text>
+      //   </Card>
+      //   <Button
+      //     title="答え〇"
+      //     type="outline"
+      //     onPress={() => {
+      //       this.props.navigation.navigate('CorrectAnswer')
+      //     }}
+      //   />
+      //   <Button
+      //     title="答え×"
+      //     type="outline"
+      //     onPress={() => {
+      //       this.props.navigation.navigate('IncorrectAnswer')
+      //     }}
+      //   />
+      // </>
     );
   }
 }

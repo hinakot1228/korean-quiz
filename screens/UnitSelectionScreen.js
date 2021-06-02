@@ -12,7 +12,7 @@ export default class UnitSelectionScreen extends Component {
             rightComponent={{ icon: 'home', color: '#fff' }}
           />
           <Button 
-            title="2020年のドラマ"
+            title="梨泰院クラス"
             onPress={() => {
               this.props.navigation.navigate('Question')
             }}
