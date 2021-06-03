@@ -38,7 +38,7 @@ export default class UnitSelectionScreen extends Component {
           <Button 
             title="梨泰院クラス"
             onPress={() => {
-              this.props.navigation.navigate('ItaewonClassQuestion')
+              this.props.navigation.navigate('Question')
             }}
            />
           <Button 

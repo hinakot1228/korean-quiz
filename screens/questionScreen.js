@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { StyleSheet, View, Image } from 'react-native';
-import {Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
+import { ThemeProvider, Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
 import {
   MatchingQuestion,
   MultipleChoiceQuestion,
@@ -9,10 +9,41 @@ import {
   WritingQuestion,
 } from 'react-native-quiz-maker';
 
+const theme = {
+  Button: {
+    containerStyle: {
+      margin: 10,
+    },
+    raised: true,
+  },
+  colors: {
+    primary: '#9fc0d1',
+  },
+};
+
 export default class QuestionScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <ThemeProvider theme={theme}>
+          <Header
+              leftComponent={{ 
+                icon: 'chevron-left', 
+                color: '#fff',
+                onPress: () => {
+                  this.props.navigation.navigate('UnitSelection')
+                },
+              }}
+              centerComponent={{ text: 'ドラマの名言で覚える韓国語', style: { color: '#fff' } }}
+              rightComponent={{ 
+                icon: 'home', 
+                color: '#fff',
+                onPress: () => {
+                  this.props.navigation.navigate('Start')
+                },
+              }}
+          />
+        </ThemeProvider>
         <QuizContainer
         questions={[
           {
