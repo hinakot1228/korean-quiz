@@ -19,9 +19,21 @@ export default class UnitSelectionScreen extends Component {
       return (
         <ThemeProvider theme={theme}>
           <Header
-            leftComponent={{ icon: 'chevron-left', color: '#fff' }}
+            leftComponent={{ 
+              icon: 'chevron-left', 
+              color: '#fff',
+              onPress: () => {
+                this.props.navigation.navigate('Start')
+              },
+             }}
             centerComponent={{ text: 'ドラマの名言で覚える韓国語', style: { color: '#fff' } }}
-            rightComponent={{ icon: 'home', color: '#fff' }}
+            rightComponent={{ 
+              icon: 'home', 
+              color: '#fff',
+              onPress: () => {
+                this.props.navigation.navigate('Start')
+              },
+            }}
           />
           <Button 
             title="梨泰院クラス"
