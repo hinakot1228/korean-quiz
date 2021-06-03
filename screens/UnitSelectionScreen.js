@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Header, Button, Icon } from 'react-native-elements';
+import { ThemeProvider,Header, Button, Icon } from 'react-native-elements';
+
+const theme = {
+  Button: {
+    containerStyle: {
+      margin: 10,
+    },
+    raised: true,
+  },
+  colors: {
+    primary: '#9fc0d1',
+  },
+};
 
 export default class UnitSelectionScreen extends Component {
     render() {
       return (
-        <>
+        <ThemeProvider theme={theme}>
           <Header
             leftComponent={{ icon: 'chevron-left', color: '#fff' }}
             centerComponent={{ text: 'ドラマの名言で覚える韓国語', style: { color: '#fff' } }}
@@ -41,16 +53,16 @@ export default class UnitSelectionScreen extends Component {
               this.props.navigation.navigate('WhenTheCamelliaBloomsQuestion')
             }}
            />
-        </>
+        </ThemeProvider>
       );
     }
   }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });
