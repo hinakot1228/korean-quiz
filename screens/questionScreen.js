@@ -121,35 +121,6 @@ export default class QuestionScreen extends Component {
         onComplete={(progress: number) => console.log('score: ', progress)}
         />
       </View>
-
-      // <>
-      //   <Header
-      //     leftComponent={{ icon: 'chevron-left', color: '#fff' }}
-      //     centerComponent={{ text: '2020年のドラマ', style: { color: '#fff' } }}
-      //     rightComponent={{ icon: 'home', color: '#fff' }}
-      //   />
-      //   <Card>
-      //     <Card.Title>Q.1</Card.Title>
-      //     <Card.Divider/>
-      //     <Text style={{marginBottom: 10}}>
-      //       テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
-      //     </Text>
-      //   </Card>
-      //   <Button
-      //     title="答え〇"
-      //     type="outline"
-      //     onPress={() => {
-      //       this.props.navigation.navigate('CorrectAnswer')
-      //     }}
-      //   />
-      //   <Button
-      //     title="答え×"
-      //     type="outline"
-      //     onPress={() => {
-      //       this.props.navigation.navigate('IncorrectAnswer')
-      //     }}
-      //   />
-      // </>
     );
   }
 }

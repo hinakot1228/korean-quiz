@@ -14,7 +14,31 @@ export default class UnitSelectionScreen extends Component {
           <Button 
             title="梨泰院クラス"
             onPress={() => {
-              this.props.navigation.navigate('Question')
+              this.props.navigation.navigate('ItaewonClassQuestion')
+            }}
+           />
+          <Button 
+            title="愛の不時着"
+            onPress={() => {
+              this.props.navigation.navigate('CrashLandingOnYouQuestion')
+            }}
+           />
+          <Button 
+            title="スタートアップ"
+            onPress={() => {
+              this.props.navigation.navigate('StartUpQuestion')
+            }}
+           />
+          <Button 
+            title="賢い医師生活"
+            onPress={() => {
+              this.props.navigation.navigate('HospitalPlaylistQuestion')
+            }}
+           />
+          <Button 
+            title="椿の花咲く頃"
+            onPress={() => {
+              this.props.navigation.navigate('WhenTheCamelliaBloomsQuestion')
             }}
            />
         </>

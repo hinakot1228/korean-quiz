@@ -2766,6 +2766,11 @@
   "resolved" "https://registry.npmjs.org/dom-walk/-/dom-walk-0.1.2.tgz"
   "version" "0.1.2"
 
+"dompurify@^2.0.8":
+  "integrity" "sha512-+9MqacuigMIZ+1+EwoEltogyWGFTJZWU3258Rupxs+2CGs4H914G9er6pZbsme/bvb5L67o2rade9n21e4RW/w=="
+  "resolved" "https://registry.npmjs.org/dompurify/-/dompurify-2.2.9.tgz"
+  "version" "2.2.9"
+
 "ee-first@1.1.1":
   "integrity" "sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0="
   "resolved" "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz"
@@ -4129,6 +4134,11 @@
   dependencies:
     "object-visit" "^1.0.0"
 
+"marked@^0.7.0":
+  "integrity" "sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg=="
+  "resolved" "https://registry.npmjs.org/marked/-/marked-0.7.0.tgz"
+  "version" "0.7.0"
+
 "md5-file@^3.2.3":
   "integrity" "sha512-3Tkp1piAHaworfcCgH0jKbTvj1jWWFgbvh2cXaNCgHwyTCBxxvD1Y04rmfpvdPm1P4oXMOpm6+2H7sr7v9v8Fw=="
   "resolved" "https://registry.npmjs.org/md5-file/-/md5-file-3.2.3.tgz"
@@ -5218,6 +5228,14 @@
   dependencies:
     "@react-navigation/core" "^3.7.9"
     "@react-navigation/native" "^3.8.4"
+
+"react-quiz-component@^0.3.8":
+  "integrity" "sha512-DrL79s567xCZuzDVUKdyj45gFIm999aEt3XEELl1F1AU5hYil6zBgj0cfrMndpq28P3gj9pBeZmZrWng1H87aw=="
+  "resolved" "https://registry.npmjs.org/react-quiz-component/-/react-quiz-component-0.3.8.tgz"
+  "version" "0.3.8"
+  dependencies:
+    "dompurify" "^2.0.8"
+    "marked" "^0.7.0"
 
 "react-refresh@^0.4.0":
   "integrity" "sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA=="
