@@ -82,7 +82,7 @@ export default function QuestionScreen( {navigation} ) {
   const toggleOverlay = () => {
     setVisible(!visible);
   };
-
+  
   return (
     <View>
       <ThemeProvider theme={theme}>
@@ -136,7 +136,7 @@ export default function QuestionScreen( {navigation} ) {
 
         <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
           <Text h1>✕　不正解</Text>
-          <Text h4>ヒント</Text>
+          <Text h4>ヒント：</Text>
           <Button
             title="もう一度解く"
             onPress={toggleOverlay}

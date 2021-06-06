@@ -88,7 +88,7 @@ export default function QuestionScreen( {navigation} ) {
       <ThemeProvider theme={theme}>
         <Header
           containerStyle={{ position: 'absolute', top: 0 }}
-          centerComponent={{ text: 'ドラマの名言で覚える韓国語', style: { color: '#fff' } }}
+          centerComponent={{ text: '梨泰院クラス', style: { color: '#fff' } }}
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
