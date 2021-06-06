@@ -26,7 +26,7 @@ export default class startScreen extends Component {
               onPress={() => {
                 this.props.navigation.navigate('UnitSelection')
               }}
-          />
+            />
           </View>
         </ThemeProvider>
       )
