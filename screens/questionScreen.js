@@ -13,6 +13,7 @@ export default function QuestionScreen( {navigation} ) {
 				{ answerText: '내 같이를 네가 정하지 마.', isCorrect: false, correctness:'✕' },
 				{ answerText: '내 가치를 네가 정해라.', isCorrect: false, correctness:'✕' },
 			],
+      questionTex: 'の価値をお前が決めるな。',
     },
     {
       language: '日本語',
