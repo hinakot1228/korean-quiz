@@ -72,6 +72,10 @@ export default function ItaewonClassScreen( {navigation}, props ) {
     }
   }
 
+  const showScoreScreen = () => {
+    navigation.navigate('Score');
+  }
+
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
       // 正解
@@ -84,6 +88,7 @@ export default function ItaewonClassScreen( {navigation}, props ) {
       setCurrentQuestion(nextQuestion);
     } else {
       // setShowScore(true);
+      showScoreScreen()
     }
   }
 
