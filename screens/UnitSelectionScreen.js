@@ -38,31 +38,31 @@ export default class UnitSelectionScreen extends Component {
           <Button 
             title="梨泰院クラス"
             onPress={() => {
-              this.props.navigation.navigate('Question')
+              this.props.navigation.navigate('ItaewonClass')
             }}
            />
           <Button 
             title="愛の不時着"
             onPress={() => {
-              this.props.navigation.navigate('CrashLandingOnYouQuestion')
+              this.props.navigation.navigate('CrashLandingOnYou')
             }}
            />
           <Button 
             title="スタートアップ"
             onPress={() => {
-              this.props.navigation.navigate('StartUpQuestion')
+              this.props.navigation.navigate('StartUp')
             }}
            />
           <Button 
             title="賢い医師生活"
             onPress={() => {
-              this.props.navigation.navigate('HospitalPlaylistQuestion')
+              this.props.navigation.navigate('HospitalPlaylist')
             }}
            />
           <Button 
             title="椿の花咲く頃"
             onPress={() => {
-              this.props.navigation.navigate('WhenTheCamelliaBloomsQuestion')
+              this.props.navigation.navigate('WhenTheCamelliaBlooms')
             }}
            />
         </ThemeProvider>

@@ -16,7 +16,7 @@ export default class ScoreScreen extends Component {
           <Card.Title>スコア</Card.Title>
           <Card.Divider/>
           <Text style={{marginBottom: 10}}>
-            〇/〇点
+            {this.props.score}点
           </Text>
         </Card>
         <Button

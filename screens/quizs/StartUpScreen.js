@@ -1,9 +1,9 @@
 import React, { Component, useState } from 'react';
 import { View } from 'react-native';
 import { ThemeProvider, Card, Header, Button, Text, Overlay } from 'react-native-elements';
-import CorrectnessModal from './components/CorrectnessModal';
+import CorrectnessModal from '../components/CorrectnessModal';
 
-export default function QuestionScreen( {navigation}, props ) {
+export default function StartUpScreen( {navigation}, props ) {
   const questions = [
     {
       language: '韓国語',
@@ -94,7 +94,7 @@ export default function QuestionScreen( {navigation}, props ) {
       <ThemeProvider theme={theme}>
         <Header
           containerStyle={{ position: 'absolute', top: 0 }}
-          centerComponent={{ text: 'ドラマの名言で覚える韓国語', style: { color: '#fff' } }}
+          centerComponent={{ text: 'スタートアップ', style: { color: '#fff' } }}
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
