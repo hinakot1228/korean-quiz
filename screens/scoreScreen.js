@@ -17,7 +17,7 @@ export default class ScoreScreen extends Component {
               onPress: () => navigation.navigate('Start')
             }}
           />
-          <Card>
+          <Card containerStyle={{top: 70, height:'50%'}}>
             <Card.Title>スコア</Card.Title>
             <Card.Divider/>
             <Text style={{marginBottom: 10}}>

@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react';
 import { View } from 'react-native';
 import { ThemeProvider, Card, Header, Button, Text, Overlay } from 'react-native-elements';
-import CorrectnessModal from '../components/CorrectnessModal';
 
 export default function ItaewonClassScreen( {navigation}, props ) {
   const questions = [

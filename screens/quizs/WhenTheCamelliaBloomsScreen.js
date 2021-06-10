@@ -1,59 +1,57 @@
 import React, { Component, useState } from 'react';
 import { View } from 'react-native';
 import { ThemeProvider, Card, Header, Button, Text, Overlay } from 'react-native-elements';
-import CorrectnessModal from '../components/CorrectnessModal';
 
 export default function WhenTheCamelliaBloomsScreen( {navigation}, props ) {
   const questions = [
     {
       language: '韓国語',
-      questionText: '俺の価値をお前が決めるな。',
+      questionText: '幸せになる資格が十分にみなぎって溢れている人です',
 			answerOptions: [
-				{ answerText: '네 가치를 내가 정하지 마.', isCorrect: false, correctness:'✕' },
-				{ answerText: '내 가치를 네가 정하지 마.', isCorrect: true, correctness:'〇' },
-				{ answerText: '내 같이를 네가 정하지 마.', isCorrect: false, correctness:'✕' },
-				{ answerText: '내 가치를 네가 정해라.', isCorrect: false, correctness:'✕' },
-			],
-      questionTex: 'の価値をお前が決めるな。',
-    },
-    {
-      language: '日本語',
-      questionText: '살아만 있다면 뭐든 별게 아니야.',
-			answerOptions: [
-				{ answerText: '生きてさえいれば何だってたいしたことない', isCorrect: true, correctness:'〇' },
-				{ answerText: '愛してさえいれば何だってたいしたことない', isCorrect: false, correctness:'✕' },
-				{ answerText: '生きてさえいれば何だって星ではない', isCorrect: false, correctness:'✕' },
-				{ answerText: '生きていれば何だってたいしたことない', isCorrect: false, correctness:'✕' },
+				{ answerText: '행복할 자격이 충분히 차고 넘치는 사람이요.', isCorrect: false, correctness:'✕' },
+				{ answerText: '행복해질 자격이 충분히 차고 넘치는 사람이요.', isCorrect: true, correctness:'〇' },
+				{ answerText: '행복해질 자격이 춘분히 차고 넘치는 사람이요.', isCorrect: false, correctness:'✕' },
+				{ answerText: '행복해질 자격이 충분히 차고 남치는 사람이요.', isCorrect: false, correctness:'✕' },
 			],
     },
     {
       language: '韓国語',
-      questionText: '望んだとおりに全てを手に入れる。それがまさに僕の夢だから',
+      questionText: '椿の花言葉のおかげであんたの星回りは良くなるよ',
 			answerOptions: [
-				{ answerText: '원하는 만큼 다 가질 거야. 그게 바로 내 꿈일 테니까', isCorrect: false, correctness:'✕' },
-				{ answerText: '원하는 대로 다 가질 거야. 그게 바로 내 꼼일 테니까', isCorrect: false, correctness:'✕' },
-				{ answerText: '원하는 대로 다 가질 거야. 그게 바로 내 꿈일 테니까', isCorrect: true, correctness:'〇' },
-				{ answerText: '원하는 대로 다 가지을 거야. 그게 바로 내 꿈이을 테니까', isCorrect: false, correctness:'✕' },
+				{ answerText: '동백꽃 꽃말 덕에 니 팔자는 빌거야', isCorrect: false, correctness:'〇' },
+				{ answerText: '동백꽃 꽃말 덕에 너 팔자는 필거야', isCorrect: true, correctness:'✕' },
+				{ answerText: '동백꽃 꽃말 덕에 니 팔차는 필거야', isCorrect: false, correctness:'✕' },
+				{ answerText: '동백꽃 꽃언어 덕에 니 팔자는 필거야', isCorrect: false, correctness:'✕' },
 			],
     },
     {
       language: '日本語',
-      questionText: '제가 생각하는 강함은 사람에게서 나옵니다.',
+      questionText: '남들 보기에 어떻든 나 보기에 행복하면 됐죠',
 			answerOptions: [
-				{ answerText: '僕は考える経験は人から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強い人から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強さは愛から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強さは人から出てきます。', isCorrect: true, correctness:'〇' },
+				{ answerText: '他人を見ることはどうであれ自分を見ることで幸せなら良いんです', isCorrect: false, correctness:'✕' },
+				{ answerText: '他人の目にはどうであれ自分の目で幸せなら良いんです', isCorrect: true, correctness:'✕' },
+				{ answerText: '南を見るのはどうであれ自分の目で幸せなら良いんです', isCorrect: false, correctness:'〇' },
+				{ answerText: '他人の目にはどうしても自分の目で幸せなら良いんです', isCorrect: false, correctness:'✕' },
 			],
     },
     {
       language: '日本語',
-      questionText: '깊은 어둠에 가둬봐라 나는 홀로 빛나는 돌덩이',
+      questionText: '다정하고 싶어요. 다정은 공짜니까. 그냥 서로 좀 친절해도 되는 거잖아요?',
 			answerOptions: [
-				{ answerText: '甲は闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に閉じこめておけ 私は一人で借金が出る石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に行け 私は一人で輝く石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: true, correctness:'〇' },
+				{ answerText: '優しくなりたいです。 優しさはタダだから。お互いにちょっと親切でも良いんじゃないですか。', isCorrect: true, correctness:'✕' },
+				{ answerText: '優しくなりたいです。 優しさはタダだから。お互いにちょっと親切になっても良いんじゃないですか。', isCorrect: false, correctness:'✕' },
+				{ answerText: '優しくなりたいです。 多点はタダだから。お互いにちょっと親切でも良いんじゃないですか。', isCorrect: false, correctness:'✕' },
+				{ answerText: '優しくなりたいです。 優しさはタダだから。西でちょっと親切でも良いんじゃないですか。', isCorrect: false, correctness:'〇' },
+			],
+    },
+    {
+      language: '韓国語',
+      questionText: 'この近所でですね、一番強くて、一番タフで、一番すばらしくて、一番立派です。',
+			answerOptions: [
+				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 훌륭하고, 제일로 창해요.', isCorrect: false, correctness:'✕' },
+				{ answerText: '이 동네에서요, 제일로 새고요, 제일로 강하고, 제일로 훌륭하고, 제일로 장해요.', isCorrect: false, correctness:'✕' },
+				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 훌륭하고, 제일로 장해요.', isCorrect: true, correctness:'✕' },
+				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 후륭하고, 제일로 장해요.', isCorrect: false, correctness:'〇' },
 			],
     },
   ]
