@@ -2,7 +2,7 @@ import React, { Component, useState } from 'react';
 import { View } from 'react-native';
 import { ThemeProvider, Card, Header, Button, Text, Overlay } from 'react-native-elements';
 
-export default function ItaewonClassScreen( {navigation}, props ) {
+export default function ItaewonClassScreen( {navigation} ) {
   const questions = [
     {
       language: '韓国語',
@@ -72,7 +72,7 @@ export default function ItaewonClassScreen( {navigation}, props ) {
   }
 
   const showScoreScreen = () => {
-    navigation.navigate('Score');
+    navigation.navigate('Score', {score: 100});
   }
 
   const handleAnswerOptionClick = (isCorrect) => {
@@ -87,11 +87,9 @@ export default function ItaewonClassScreen( {navigation}, props ) {
       setCurrentQuestion(nextQuestion);
     } else {
       // setShowScore(true);
-      showScoreScreen()
+      showScoreScreen();
     }
   }
-
-
 
   return (
     <View>

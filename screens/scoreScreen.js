@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import { StyleSheet, View, Image } from 'react-native';
 import {ThemeProvider,Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
 
-export default function ScoreScreen({navigation},) {
+export default function ScoreScreen({route, navigation},) {
   return (
     <View>
       <ThemeProvider theme={theme}>
@@ -13,7 +13,7 @@ export default function ScoreScreen({navigation},) {
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
-            onPress: () => navigation.navigate('Start')
+            onPress: () => this.navigation.navigate('Start')
           }}
         />
         <Card containerStyle={{top: 70, height:'50%'}}>
@@ -26,7 +26,7 @@ export default function ScoreScreen({navigation},) {
         <Button
           title="トップに戻る"
           onPress={() => {
-            navigation.navigate('Start')
+            this.navigation.navigate('Start')
           }}
         />
       </ThemeProvider>
