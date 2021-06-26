@@ -3,37 +3,35 @@ import { render } from 'react-dom';
 import { StyleSheet, View, Image } from 'react-native';
 import {ThemeProvider,Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
 
-export default class ScoreScreen extends Component {
-  render() {
-    return (
-      <View>
-        <ThemeProvider theme={theme}>
-          <Header
-            containerStyle={{ position: 'absolute', top: 0 }}
-            centerComponent={{ text: 'スタートアップ', style: { color: '#fff' } }}
-            rightComponent={{ 
-              icon: 'home', 
-              color: '#fff',
-              onPress: () => navigation.navigate('Start')
-            }}
-          />
-          <Card containerStyle={{top: 70, height:'50%'}}>
-            <Card.Title>スコア</Card.Title>
-            <Card.Divider/>
-            <Text style={{marginBottom: 10}}>
-              〇点
-            </Text>
-          </Card>
-          <Button
-            title="トップに戻る"
-            onPress={() => {
-              this.props.navigation.navigate('Start')
-            }}
-          />
-        </ThemeProvider>
-      </View>
-    );
-  }  
+export default function ScoreScreen({navigation},) {
+  return (
+    <View>
+      <ThemeProvider theme={theme}>
+        <Header
+          containerStyle={{ position: 'absolute', top: 0 }}
+          centerComponent={{ text: 'スタートアップ', style: { color: '#fff' } }}
+          rightComponent={{ 
+            icon: 'home', 
+            color: '#fff',
+            onPress: () => navigation.navigate('Start')
+          }}
+        />
+        <Card containerStyle={{top: 70, height:'50%'}}>
+          <Card.Title>スコア</Card.Title>
+          <Card.Divider/>
+          <Text style={{marginBottom: 10}}>
+            〇点
+          </Text>
+        </Card>
+        <Button
+          title="トップに戻る"
+          onPress={() => {
+            navigation.navigate('Start')
+          }}
+        />
+      </ThemeProvider>
+    </View>
+  );
 }
 
 const theme = {
