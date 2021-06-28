@@ -1,8 +1,10 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { ThemeProvider, Card, Header, Button, Text, Overlay } from 'react-native-elements';
 
-export default function ItaewonClassScreen( {navigation} ) {
+export default function ItaewonClassScreen(props) {
+  const {navigation} = props;
+
   const questions = [
     {
       language: '韓国語',
@@ -58,27 +60,28 @@ export default function ItaewonClassScreen( {navigation} ) {
   ]
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showScore, setShowScore] = useState(false);
+  // const [showScore, setShowScore] = useState(false);
   const [score, setScore] =useState(0);
   const [visible, setVisible] = useState(false);
-  const [correctness, setCorrectness] = useState('');
+  // const [correctness, setCorrectness] = useState('');
 
-  const toggleOverlay = (isCorrect) => {
-    if (isCorrect) {
+  const toggleOverlay = () => {
+    // if (isCorrect) {
       setVisible(!visible);
-    } else {
-      setVisible(!visible);
-    }
+    // } else {
+    //   setVisible(!visible);
+    // }
   }
 
   const showScoreScreen = () => {
-    navigation.navigate('Score', {score: 100});
+    navigation.navigate('Score', {score});
   }
 
   const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      // 正解
+    if (isCorrect === true) {
       setScore(score + 1);
+    } else {
+      setScore(score);
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -86,7 +89,6 @@ export default function ItaewonClassScreen( {navigation} ) {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      // setShowScore(true);
       showScoreScreen();
     }
   }
@@ -105,6 +107,9 @@ export default function ItaewonClassScreen( {navigation} ) {
         />
         <Card containerStyle={{top: 70, height:'50%'}}>
           <Card.Title>Q.{currentQuestion + 1}</Card.Title>
+          <Text>
+            {score}
+          </Text>
           <Card.Divider/>
           <Text h5 style={{paddingBottom: 10}}>
             以下のセリフを{questions[currentQuestion].language}にしてみよう。

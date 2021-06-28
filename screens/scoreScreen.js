@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { render } from 'react-dom';
 import { StyleSheet, View, Image } from 'react-native';
 import {ThemeProvider,Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
 
-export default function ScoreScreen({route, navigation},) {
+export default function ScoreScreen({navigation}) {
+  const [text, setText] = useState("");
+  const { score } = navigation.state.params;
+
+  useEffect(() => {
+    setText(score);
+  }, []);
+
   return (
     <View>
       <ThemeProvider theme={theme}>
@@ -13,20 +20,20 @@ export default function ScoreScreen({route, navigation},) {
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
-            onPress: () => this.navigation.navigate('Start')
+            onPress: () => navigation.navigate('Start')
           }}
         />
         <Card containerStyle={{top: 70, height:'50%'}}>
           <Card.Title>スコア</Card.Title>
           <Card.Divider/>
           <Text style={{marginBottom: 10}}>
-            〇点
+            {text}〇点
           </Text>
         </Card>
         <Button
           title="トップに戻る"
           onPress={() => {
-            this.navigation.navigate('Start')
+            navigation.navigate('Start')
           }}
         />
       </ThemeProvider>
