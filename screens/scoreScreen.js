@@ -27,7 +27,7 @@ export default function ScoreScreen({navigation}) {
           <Card.Title>スコア</Card.Title>
           <Card.Divider/>
           <Text style={{marginBottom: 10}}>
-            {text}〇点
+            {text}点
           </Text>
         </Card>
         <Button

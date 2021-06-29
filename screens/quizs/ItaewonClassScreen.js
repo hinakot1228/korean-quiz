@@ -78,7 +78,7 @@ export default function ItaewonClassScreen(props) {
   }
 
   const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect === true) {
+    if (isCorrect) {
       setScore(score + 1);
     } else {
       setScore(score);
@@ -126,7 +126,7 @@ export default function ItaewonClassScreen(props) {
           {questions[currentQuestion].answerOptions.map((answerOption) => (
             <Button
               title={answerOption.answerText}
-              onPress={handleAnswerOptionClick}
+              onPress={() => handleAnswerOptionClick(answerOption.isCorrect)}
             />
           ))}
         </View>
