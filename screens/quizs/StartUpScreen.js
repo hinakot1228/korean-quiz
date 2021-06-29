@@ -1,81 +1,86 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { ThemeProvider, Card, Header, Button, Text, Overlay } from 'react-native-elements';
-import CorrectnessModal from '../components/CorrectnessModal';
 
-export default function StartUpScreen( {navigation}, props ) {
+export default function StartUpScreen(props) {
+  const {navigation} = props;
+
   const questions = [
     {
       language: '韓国語',
-      questionText: '俺の価値をお前が決めるな。',
+      questionText: 'お前はコスモスだよ。まだ春じゃない。ゆっくり待てば秋に一番きれいに咲くよ。',
 			answerOptions: [
-				{ answerText: '네 가치를 내가 정하지 마.', isCorrect: false, correctness:'✕' },
-				{ answerText: '내 가치를 네가 정하지 마.', isCorrect: true, correctness:'〇' },
-				{ answerText: '내 같이를 네가 정하지 마.', isCorrect: false, correctness:'✕' },
-				{ answerText: '내 가치를 네가 정해라.', isCorrect: false, correctness:'✕' },
-			],
-      questionTex: 'の価値をお前が決めるな。',
-    },
-    {
-      language: '日本語',
-      questionText: '살아만 있다면 뭐든 별게 아니야.',
-			answerOptions: [
-				{ answerText: '生きてさえいれば何だってたいしたことない', isCorrect: true, correctness:'〇' },
-				{ answerText: '愛してさえいれば何だってたいしたことない', isCorrect: false, correctness:'✕' },
-				{ answerText: '生きてさえいれば何だって星ではない', isCorrect: false, correctness:'✕' },
-				{ answerText: '生きていれば何だってたいしたことない', isCorrect: false, correctness:'✕' },
+				{ answerText: '넌 코스모스야. 아직 봄이잖아. 천천히 기다리면 가을에 가장 예쁘게 필거야.', isCorrect: true, correctness:'〇' },
+				{ answerText: '넌 고스모스야. 아직 봄이잖아. 천천히 기다리면 가을에 가장 예쁘게 필거야.', isCorrect: false, correctness:'✕' },
+				{ answerText: '넌 코스모스야. 아직 붐이잖아. 천천히 기다리면 가을에 가장 예쁘게 필거야.', isCorrect: false, correctness:'✕' },
+				{ answerText: '넌 코스모스야. 아직 봄이잖아. 천천히 기다리면 가을에 가장 예쁘게 빌거야.', isCorrect: false, correctness:'✕' },
 			],
     },
     {
       language: '韓国語',
-      questionText: '望んだとおりに全てを手に入れる。それがまさに僕の夢だから',
+      questionText: 'ずっと晴れている日なら世界が全て砂漠だって。雨も降って雪も降らなきゃ。地面から草も出ておいしいみかんもできるんだよ。',
 			answerOptions: [
-				{ answerText: '원하는 만큼 다 가질 거야. 그게 바로 내 꿈일 테니까', isCorrect: false, correctness:'✕' },
-				{ answerText: '원하는 대로 다 가질 거야. 그게 바로 내 꼼일 테니까', isCorrect: false, correctness:'✕' },
-				{ answerText: '원하는 대로 다 가질 거야. 그게 바로 내 꿈일 테니까', isCorrect: true, correctness:'〇' },
-				{ answerText: '원하는 대로 다 가지을 거야. 그게 바로 내 꿈이을 테니까', isCorrect: false, correctness:'✕' },
+				{ answerText: '만약 맑은 날이면 세상이 온통 사막이라고. 비도 오고 눈도 오고 해야 땅에서 풀도 나고 맛난 귤도 나지.', isCorrect: false, correctness:'✕' },
+				{ answerText: '마냥 맑은 날이면 세상이 온통 사막이라고. 비도 내리고 눈도 내리고 해야 땅에서 풀도 나고 맛난 귤도 나지.', isCorrect: false, correctness:'✕' },
+				{ answerText: '마냥 맑은 날이면 세상이 온통 사막이라고. 비도 오고 눈도 오고 해야 땅에서 불도 나고 맛난 귤도 나지.', isCorrect: false, correctness:'✕' },
+				{ answerText: '마냥 맑은 날이면 세상이 온통 사막이라고. 비도 오고 눈도 오고 해야 땅에서 풀도 나고 맛난 귤도 나지.', isCorrect: true, correctness:'〇' },
+			],
+    },
+    {
+      language: '韓国語',
+      questionText: '내 선택을 단 한 번도, 후회해 본 적이 없어요. 기를 쓰고 그렇게 만들었거든.',
+			answerOptions: [
+				{ answerText: '自分の選択を一度も後悔した敵がいないです。躍起になってそうしたんだよ。', isCorrect: false, correctness:'✕' },
+				{ answerText: '自分の選択を一度も後悔したことがないです。気を使ってそうしたんだよ。', isCorrect: false, correctness:'✕' },
+				{ answerText: '自分の洗濯を一度も後悔したことがないです。躍起になってそうしたんだよ。', isCorrect: false, correctness:'✕' },
+				{ answerText: '自分の選択を一度も後悔したことがないです。躍起になってそうしたんだよ。', isCorrect: true, correctness:'〇' },
 			],
     },
     {
       language: '日本語',
-      questionText: '제가 생각하는 강함은 사람에게서 나옵니다.',
+      questionText: 'さまよってもいいから地図のない航海に出ることも大丈夫そうだ。君と一緒なら',
 			answerOptions: [
-				{ answerText: '僕は考える経験は人から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強い人から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強さは愛から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強さは人から出てきます。', isCorrect: true, correctness:'〇' },
+				{ answerText: '헤매도 좋아서 지도없는 항해를 떠나는 것도 괜찮겠다. 너와 함께라면.', isCorrect: false, correctness:'✕' },
+				{ answerText: '헤매도 좋으니 지도없는 향해를 떠나는 것도 괜찮겠다. 너와 함께라면.', isCorrect: false, correctness:'✕' },
+				{ answerText: '헤매도 좋으니 지도없는 항해에 떠나는 것도 괜찮겠다. 너와 함께라면.', isCorrect: false, correctness:'✕' },
+				{ answerText: '헤매도 좋으니 지도없는 항해를 떠나는 것도 괜찮겠다. 너와 함께라면.', isCorrect: true, correctness:'〇' },
 			],
     },
     {
       language: '日本語',
-      questionText: '깊은 어둠에 가둬봐라 나는 홀로 빛나는 돌덩이',
+      questionText: '너는 저기 있는 겨우 먼지같은 별이 맞아. 항성이고 달보다 어마어마하게 커. 그러니까 도망치지 마',
 			answerOptions: [
-				{ answerText: '甲は闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に閉じこめておけ 私は一人で借金が出る石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に行け 私は一人で輝く石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: true, correctness:'〇' },
+				{ answerText: '君はあそこにある埃のような星だよ。恒星で月よりも物凄く大きい。だから逃げないで', isCorrect: false, correctness:'✕' },
+				{ answerText: '君はあそこにある最初のような星だよ。恒星で月よりも物凄く大きい。だから逃げないで', isCorrect: false, correctness:'✕' },
+				{ answerText: '君はあそこにある埃のような星だよ。恒星で月よりも物凄く大きい。だから逃げないで', isCorrect: false, correctness:'✕' },
+				{ answerText: '君はあそこにある埃のような星だよ。恒星で月よりもまあまあ大きい。だから逃げないで', isCorrect: true, correctness:'〇' },
 			],
     },
   ]
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showScore, setShowScore] = useState(false);
+  // const [showScore, setShowScore] = useState(false);
   const [score, setScore] =useState(0);
   const [visible, setVisible] = useState(false);
-  const [correctness, setCorrectness] = useState('');
+  // const [correctness, setCorrectness] = useState('');
 
-  const toggleOverlay = (isCorrect) => {
-    if (isCorrect) {
+  const toggleOverlay = () => {
+    // if (isCorrect) {
       setVisible(!visible);
-    } else {
-      setVisible(!visible);
-    }
+    // } else {
+    //   setVisible(!visible);
+    // }
+  }
+
+  const showScoreScreen = () => {
+    navigation.navigate('Score', {score});
   }
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
-      // 正解
       setScore(score + 1);
+    } else {
+      setScore(score);
     }
 
     const nextQuestion = currentQuestion + 1;
@@ -83,11 +88,9 @@ export default function StartUpScreen( {navigation}, props ) {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      // setShowScore(true);
+      showScoreScreen();
     }
   }
-
-
 
   return (
     <View>
@@ -103,6 +106,9 @@ export default function StartUpScreen( {navigation}, props ) {
         />
         <Card containerStyle={{top: 70, height:'50%'}}>
           <Card.Title>Q.{currentQuestion + 1}</Card.Title>
+          <Text>
+            {score}
+          </Text>
           <Card.Divider/>
           <Text h5 style={{paddingBottom: 10}}>
             以下のセリフを{questions[currentQuestion].language}にしてみよう。
@@ -119,7 +125,7 @@ export default function StartUpScreen( {navigation}, props ) {
           {questions[currentQuestion].answerOptions.map((answerOption) => (
             <Button
               title={answerOption.answerText}
-              onPress={handleAnswerOptionClick}
+              onPress={() => handleAnswerOptionClick(answerOption.isCorrect)}
             />
           ))}
         </View>
