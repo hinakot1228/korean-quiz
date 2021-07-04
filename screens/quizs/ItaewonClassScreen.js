@@ -120,7 +120,7 @@ export default function ItaewonClassScreen(props) {
     <View>
       <ThemeProvider theme={theme}>
         <Header
-          containerStyle={{ position: 'absolute', top: 0 }}
+          containerStyle={{ position: 'absolute', top: 0, width: '100%' }}
           centerComponent={{ text: '梨泰院クラス', style: { color: '#fff' } }}
           rightComponent={{ 
             icon: 'home', 
@@ -140,6 +140,7 @@ export default function ItaewonClassScreen(props) {
           <Button
               title='ヒント'
               onPress={toggleOverlay}
+              containerStyle={{width: '30%',textAlign: 'center',}}
             />
         </Card>
         <View style={{top: '16%' }}>
@@ -158,6 +159,7 @@ export default function ItaewonClassScreen(props) {
           <Button
             title="閉じる"
             onPress={toggleOverlay}
+            containerStyle={{width: '30%'}}
           />
         </Overlay>
       </ThemeProvider>

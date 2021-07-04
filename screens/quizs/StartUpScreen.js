@@ -151,7 +151,7 @@ export default function StartUpScreen(props) {
         <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
           <Text h2>ヒント</Text>
           {questions[currentQuestion].hintWords.map((hintWord) => (
-            <Text h4>{hintWord.korean}：{ntWord.japanese}</Text>
+            <Text h4>{hintWord.korean}：{hintWord.japanese}</Text>
           ))}
           <Button
             title="閉じる"

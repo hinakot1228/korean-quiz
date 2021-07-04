@@ -23,19 +23,21 @@ export default function ScoreScreen({navigation}) {
             onPress: () => navigation.navigate('Start')
           }}
         />
-        <Card containerStyle={{top: 70, height:'50%'}}>
+        <Card containerStyle={{top: '30%', height:'50%'}}>
           <Card.Title>スコア</Card.Title>
           <Card.Divider/>
-          <Text style={{marginBottom: 10}}>
-            {text}点
+          <Text h1 style={{marginBottom: 10}}>
+            {text}/5点
           </Text>
         </Card>
-        <Button
-          title="トップに戻る"
-          onPress={() => {
-            navigation.navigate('Start')
-          }}
-        />
+        <View style={{top: '60%' }}>
+          <Button
+            title="トップに戻る"
+            onPress={() => {
+              navigation.navigate('Start')
+            }}
+          />
+        </View>
       </ThemeProvider>
     </View>
   );
