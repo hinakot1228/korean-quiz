@@ -2,59 +2,58 @@ import React, { Component, useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { ThemeProvider, Card, Header, Button, Text, Overlay } from 'react-native-elements';
 
-export default function HospitalPlaylistScreen(props) {
+export default function ItaewonClassScreen(props) {
   const {navigation} = props;
 
   const questions = [
     {
       language: '韓国語',
-      questionText: '俺の価値をお前が決めるな。',
+      questionText: 'あんたは最近あんたのために何をしてあげてんの？',
 			answerOptions: [
-				{ answerText: '네 가치를 내가 정하지 마.', isCorrect: false, correctness:'✕' },
-				{ answerText: '내 가치를 네가 정하지 마.', isCorrect: true, correctness:'〇' },
-				{ answerText: '내 같이를 네가 정하지 마.', isCorrect: false, correctness:'✕' },
-				{ answerText: '내 가치를 네가 정해라.', isCorrect: false, correctness:'✕' },
-			],
-      questionTex: 'の価値をお前が決めるな。',
-    },
-    {
-      language: '日本語',
-      questionText: '살아만 있다면 뭐든 별게 아니야.',
-			answerOptions: [
-				{ answerText: '生きてさえいれば何だってたいしたことない', isCorrect: true, correctness:'〇' },
-				{ answerText: '愛してさえいれば何だってたいしたことない', isCorrect: false, correctness:'✕' },
-				{ answerText: '生きてさえいれば何だって星ではない', isCorrect: false, correctness:'✕' },
-				{ answerText: '生きていれば何だってたいしたことない', isCorrect: false, correctness:'✕' },
+				{ answerText: '나는 요즘 날 위해 무엇을 해 주니?', isCorrect: false },
+				{ answerText: '너는 요즘 너에 위해 무엇을 해 주니?', isCorrect: false },
+				{ answerText: '너는 요즘 널 위해 무엇을 해 줬니?', isCorrect: false },
+				{ answerText: '너는 요즘 널 위해 무엇을 해 주니?', isCorrect: true },
 			],
     },
     {
       language: '韓国語',
-      questionText: '望んだとおりに全てを手に入れる。それがまさに僕の夢だから',
+      questionText: '最善を尽くします。',
 			answerOptions: [
-				{ answerText: '원하는 만큼 다 가질 거야. 그게 바로 내 꿈일 테니까', isCorrect: false, correctness:'✕' },
-				{ answerText: '원하는 대로 다 가질 거야. 그게 바로 내 꼼일 테니까', isCorrect: false, correctness:'✕' },
-				{ answerText: '원하는 대로 다 가질 거야. 그게 바로 내 꿈일 테니까', isCorrect: true, correctness:'〇' },
-				{ answerText: '원하는 대로 다 가지을 거야. 그게 바로 내 꿈이을 테니까', isCorrect: false, correctness:'✕' },
+				{ answerText: '최선을 다했습니다.', isCorrect: false },
+				{ answerText: '최선을 다 하겠습니다.', isCorrect: false },
+				{ answerText: '최선을 다하겠습니다.', isCorrect: true },
+				{ answerText: '최손을 다하겠습니다.', isCorrect: false },
 			],
     },
     {
-      language: '日本語',
-      questionText: '제가 생각하는 강함은 사람에게서 나옵니다.',
+      language: '韓国語',
+      questionText: '時間がもったいない。俺が好きなこと俺がしたいこと、今すぐやりながら生きるよ。',
 			answerOptions: [
-				{ answerText: '僕は考える経験は人から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強い人から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強さは愛から出てきます。', isCorrect: false, correctness:'✕' },
-				{ answerText: '僕は考える強さは人から出てきます。', isCorrect: true, correctness:'〇' },
+				{ answerText: '시간이 아까워. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 바로 하면서 살래.', isCorrect: false },
+				{ answerText: '시간이 아까워. 내가 좋아 하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살래.', isCorrect: true },
+				{ answerText: '시간이 아까워. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살래.', isCorrect: false },
+				{ answerText: '시간이 아깝어. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살래.', isCorrect: false },
 			],
     },
     {
-      language: '日本語',
-      questionText: '깊은 어둠에 가둬봐라 나는 홀로 빛나는 돌덩이',
+      language: '韓国語',
+      questionText: '判断の瞬間が満ち潮みたいに押し寄せてきたら、その中の大きなのいくつかは俺に聞いてみな。',
 			answerOptions: [
-				{ answerText: '甲は闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に閉じこめておけ 私は一人で借金が出る石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に行け 私は一人で輝く石ころ', isCorrect: false, correctness:'✕' },
-				{ answerText: '深い闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: true, correctness:'〇' },
+				{ answerText: '판단의 순간들이 밀물처럼 밀어오면, 그중 큰 거 몇 개는 나한테 물어 봐.', isCorrect: false },
+				{ answerText: '판단의 순간들이 밀물처럼 밀리면, 그중 큰 거 몇 개는 나한테 물어 봐.', isCorrect: false },
+				{ answerText: '판단의 순간들이 밀물처럼 밀려오면, 그중 큰 거 몇 개는 나한테 묻어 봐.', isCorrect: false },
+				{ answerText: '판단의 순간들이 밀물처럼 밀려오면, 그중 큰 거 몇 개는 나한테 물어 봐.', isCorrect: true },
+			],
+    },
+    {
+      language: '韓国語',
+      questionText: '責任感を持って逃げずに最善を尽くした。今日よくやったよ。',
+			answerOptions: [
+				{ answerText: '책임감 있게 도망 안 가고 최선을 다했어. 오늘 너무 잘했어.', isCorrect: false },
+				{ answerText: '책임감 있게  안 도망 가고 최선을 다했어. 오늘 너무 잘했어.', isCorrect: true },
+				{ answerText: '책임감 있게 도망 안 가고 최선을 다 했어. 오늘 너무 잘했어.', isCorrect: false },
+				{ answerText: '첵임감 있게 도망 안 가고 최선을 다했어. 오늘 너무 잘했어.', isCorrect: false },
 			],
     },
   ]
@@ -98,7 +97,7 @@ export default function HospitalPlaylistScreen(props) {
       <ThemeProvider theme={theme}>
         <Header
           containerStyle={{ position: 'absolute', top: 0 }}
-          centerComponent={{ text: '賢い医師生活', style: { color: '#fff' } }}
+          centerComponent={{ text: '梨泰院クラス', style: { color: '#fff' } }}
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
