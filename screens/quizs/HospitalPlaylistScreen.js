@@ -10,66 +10,87 @@ export default function ItaewonClassScreen(props) {
       language: '韓国語',
       questionText: 'あんたは最近あんたのために何をしてあげてんの？',
 			answerOptions: [
-				{ answerText: '나는 요즘 날 위해 무엇을 해 주니?', isCorrect: false },
-				{ answerText: '너는 요즘 너에 위해 무엇을 해 주니?', isCorrect: false },
-				{ answerText: '너는 요즘 널 위해 무엇을 해 줬니?', isCorrect: false },
-				{ answerText: '너는 요즘 널 위해 무엇을 해 주니?', isCorrect: true },
+				{ answerText: '나는 요즘 날 위해 무엇을 해 주니?',  },
+				{ answerText: '너는 요즘 너에 위해 무엇을 해 주니?',  },
+				{ answerText: '너는 요즘 널 위해 무엇을 해 줬니?',  },
+				{ answerText: '너는 요즘 널 위해 무엇을 해 주니?', },
+			],
+      hintWords: [
+				{ korean: '을/를 위해', japanese: '' },
+				{ korean: '아/어 주다', japanese: '' },
+				{ korean: '', japanese: '' },
+				{ korean: '', japanese: '' },
+				{ korean: '', japanese: '' },
+				{ korean: '', japanese: '' },
 			],
     },
     {
       language: '韓国語',
       questionText: '最善を尽くします。',
 			answerOptions: [
-				{ answerText: '최선을 다했습니다.', isCorrect: false },
-				{ answerText: '최선을 다 하겠습니다.', isCorrect: false },
-				{ answerText: '최선을 다하겠습니다.', isCorrect: true },
-				{ answerText: '최손을 다하겠습니다.', isCorrect: false },
+				{ answerText: '최선을 다했습니다.',  },
+				{ answerText: '최선을 다 하겠습니다.',  },
+				{ answerText: '최선을 다하겠습니다.', },
+				{ answerText: '최손을 다하겠습니다.',  },
+			],
+      hintWords: [
+				{ korean: '을/를 위해', japanese: '-のため' },
+				{ korean: '아/어 주다', japanese: 'してあげる、してくれる' },
 			],
     },
     {
       language: '韓国語',
       questionText: '時間がもったいない。俺が好きなこと俺がしたいこと、今すぐやりながら生きるよ。',
 			answerOptions: [
-				{ answerText: '시간이 아까워. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 바로 하면서 살래.', isCorrect: false },
-				{ answerText: '시간이 아까워. 내가 좋아 하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살래.', isCorrect: true },
-				{ answerText: '시간이 아까워. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살래.', isCorrect: false },
-				{ answerText: '시간이 아깝어. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살래.', isCorrect: false },
+				{ answerText: '시간이 아까워. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 바로 하면서 살래.',  },
+				{ answerText: '시간이 아까워. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살레.', },
+				{ answerText: '시간이 아까워. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살래.',  },
+				{ answerText: '시간이 아깝어. 내가 좋아하는 거, 내가 하고 싶은 거, 지금 당장 하면서 살래.',  },
+			],
+      hintWords: [
+				{ korean: '아깝다', japanese: '惜しい、もったいない' },
+				{ korean: '바로', japanese: 'まさに' },
+				{ korean: '당장', japanese: 'すぐに' },
+				{ korean: 'ㄹ래', japanese: '-する（つもり）' },
 			],
     },
     {
       language: '韓国語',
       questionText: '判断の瞬間が満ち潮みたいに押し寄せてきたら、その中の大きなのいくつかは俺に聞いてみな。',
 			answerOptions: [
-				{ answerText: '판단의 순간들이 밀물처럼 밀어오면, 그중 큰 거 몇 개는 나한테 물어 봐.', isCorrect: false },
-				{ answerText: '판단의 순간들이 밀물처럼 밀리면, 그중 큰 거 몇 개는 나한테 물어 봐.', isCorrect: false },
-				{ answerText: '판단의 순간들이 밀물처럼 밀려오면, 그중 큰 거 몇 개는 나한테 묻어 봐.', isCorrect: false },
-				{ answerText: '판단의 순간들이 밀물처럼 밀려오면, 그중 큰 거 몇 개는 나한테 물어 봐.', isCorrect: true },
+				{ answerText: '판단의 순간들이 밀물처럼 밀어오면, 그중 큰 거 몇 개는 나한테 물어 봐.',  },
+				{ answerText: '판단의 순간들이 밀물처럼 밀리면, 그중 큰 거 몇 개는 나한테 물어 봐.',  },
+				{ answerText: '판단의 순간들이 밀물처럼 밀려오면, 그중 큰 거 몇 개는 나한테 묻어 봐.',  },
+				{ answerText: '판단의 순간들이 밀물처럼 밀려오면, 그중 큰 거 몇 개는 나한테 물어 봐.', },
+			],
+      hintWords: [
+				{ korean: '밀물', japanese: '満ち潮' },
+				{ korean: '밀어오다', japanese: '押し寄せる' },
+				{ korean: '묻다', japanese: '聞く、尋ねる' },
 			],
     },
     {
       language: '韓国語',
       questionText: '責任感を持って逃げずに最善を尽くした。今日よくやったよ。',
 			answerOptions: [
-				{ answerText: '책임감 있게 도망 안 가고 최선을 다했어. 오늘 너무 잘했어.', isCorrect: false },
-				{ answerText: '책임감 있게  안 도망 가고 최선을 다했어. 오늘 너무 잘했어.', isCorrect: true },
-				{ answerText: '책임감 있게 도망 안 가고 최선을 다 했어. 오늘 너무 잘했어.', isCorrect: false },
-				{ answerText: '첵임감 있게 도망 안 가고 최선을 다했어. 오늘 너무 잘했어.', isCorrect: false },
+				{ answerText: '책임감 있게 도망 안 가고 최선을 다했어. 오늘 너무 잘했어.',  },
+				{ answerText: '책임감 있게  안 도망 가고 최선을 다했어. 오늘 너무 잘했어.', },
+				{ answerText: '책임감 있게 도망 안 가고 최선을 다 했어. 오늘 너무 잘했어.',  },
+				{ answerText: '첵임감 있게 도망 안 가고 최선을 다했어. 오늘 너무 잘했어.',  },
+			],
+      hintWords: [
+				{ korean: '（漢字語）안 하다', japanese: '-しない' },
+        { korean: '최선을 다하다', japanese: '最善を尽くす' },
 			],
     },
   ]
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  // const [showScore, setShowScore] = useState(false);
   const [score, setScore] =useState(0);
   const [visible, setVisible] = useState(false);
-  // const [correctness, setCorrectness] = useState('');
 
   const toggleOverlay = () => {
-    // if (isCorrect) {
       setVisible(!visible);
-    // } else {
-    //   setVisible(!visible);
-    // }
   }
 
   const showScoreScreen = () => {
@@ -97,7 +118,7 @@ export default function ItaewonClassScreen(props) {
       <ThemeProvider theme={theme}>
         <Header
           containerStyle={{ position: 'absolute', top: 0 }}
-          centerComponent={{ text: '梨泰院クラス', style: { color: '#fff' } }}
+          centerComponent={{ text: '賢い医師生活', style: { color: '#fff' } }}
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
@@ -106,9 +127,6 @@ export default function ItaewonClassScreen(props) {
         />
         <Card containerStyle={{top: 70, height:'50%'}}>
           <Card.Title>Q.{currentQuestion + 1}</Card.Title>
-          <Text>
-            {score}
-          </Text>
           <Card.Divider/>
           <Text h5 style={{paddingBottom: 10}}>
             以下のセリフを{questions[currentQuestion].language}にしてみよう。
@@ -129,16 +147,17 @@ export default function ItaewonClassScreen(props) {
             />
           ))}
         </View>
+        <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
+          <Text h2>ヒント</Text>
+          {questions[currentQuestion].hintWords.map((hintWord) => (
+            <Text h4>{hintWord.korean}：{hintWord.japanese}</Text>
+          ))}
+          <Button
+            title="閉じる"
+            onPress={toggleOverlay}
+          />
+        </Overlay>
       </ThemeProvider>
-
-      <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
-        <Text h2>ヒント</Text>
-        <Text h4>ヒント文</Text>
-        <Button
-          title="閉じる"
-          onPress={toggleOverlay}
-        />
-      </Overlay>
     </View>
   );
 }

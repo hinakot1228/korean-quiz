@@ -5,7 +5,7 @@ import { ThemeProvider,Header, Button, Icon } from 'react-native-elements';
 const theme = {
   Button: {
     containerStyle: {
-      margin: 10,
+      margin: 30,
     },
     raised: true,
   },
