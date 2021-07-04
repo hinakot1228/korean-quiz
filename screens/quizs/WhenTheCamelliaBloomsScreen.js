@@ -10,66 +10,85 @@ export default function WhenTheCamelliaBloomsScreen(props) {
       language: '韓国語',
       questionText: '幸せになる資格が十分にみなぎって溢れている人です',
 			answerOptions: [
-				{ answerText: '행복할 자격이 충분히 차고 넘치는 사람이요.', isCorrect: false, correctness:'✕' },
-				{ answerText: '행복해질 자격이 충분히 차고 넘치는 사람이요.', isCorrect: true, correctness:'〇' },
-				{ answerText: '행복해질 자격이 춘분히 차고 넘치는 사람이요.', isCorrect: false, correctness:'✕' },
-				{ answerText: '행복해질 자격이 충분히 차고 남치는 사람이요.', isCorrect: false, correctness:'✕' },
+				{ answerText: '행복할 자격이 충분히 차고 넘치는 사람이요.', isCorrect: false, },
+				{ answerText: '행복해질 자격이 충분히 차고 넘치는 사람이요.', isCorrect: true, },
+				{ answerText: '행복해질 자격이 춘분히 차고 넘치는 사람이요.', isCorrect: false, },
+				{ answerText: '행복해질 자격이 충분히 차고 남치는 사람이요.', isCorrect: false, },
 			],
+      hintWords: [
+        { korean: '아/어지다', japanese: '-になる' },
+        { korean: '충분히', japanese: '十分に' },
+        { korean: '넘치다', japanese: '溢れる' },
+      ],
     },
     {
       language: '韓国語',
       questionText: '椿の花言葉のおかげであんたの星回りは良くなるよ',
 			answerOptions: [
-				{ answerText: '동백꽃 꽃말 덕에 니 팔자는 빌거야', isCorrect: false, correctness:'〇' },
-				{ answerText: '동백꽃 꽃말 덕에 너 팔자는 필거야', isCorrect: true, correctness:'✕' },
-				{ answerText: '동백꽃 꽃말 덕에 니 팔차는 필거야', isCorrect: false, correctness:'✕' },
-				{ answerText: '동백꽃 꽃언어 덕에 니 팔자는 필거야', isCorrect: false, correctness:'✕' },
+				{ answerText: '동백꽃 꽃말 덕에 니 팔자는 빌거야', isCorrect: false, },
+				{ answerText: '동백꽃 꽃말 덕에 너 팔자는 필거야', isCorrect: true, },
+				{ answerText: '동백꽃 꽃말 덕에 니 팔차는 필거야', isCorrect: false, },
+				{ answerText: '동백꽃 꽃언어 덕에 니 팔자는 필거야', isCorrect: false, },
 			],
+      hintWords: [
+        { korean: '꽃말', japanese: '花言葉' },
+        { korean: '팔자가 피다', japanese: '星回りが良くなる' },
+        { korean: 'ㄹ거다', japanese: '-になるだろう' },
+      ],
     },
     {
       language: '日本語',
       questionText: '남들 보기에 어떻든 나 보기에 행복하면 됐죠',
 			answerOptions: [
-				{ answerText: '他人を見ることはどうであれ自分を見ることで幸せなら良いんです', isCorrect: false, correctness:'✕' },
-				{ answerText: '他人の目にはどうであれ自分の目で幸せなら良いんです', isCorrect: true, correctness:'✕' },
-				{ answerText: '南を見るのはどうであれ自分の目で幸せなら良いんです', isCorrect: false, correctness:'〇' },
-				{ answerText: '他人の目にはどうしても自分の目で幸せなら良いんです', isCorrect: false, correctness:'✕' },
+				{ answerText: '他人を見ることはどうであれ自分を見ることで幸せなら良いんです', isCorrect: false, },
+				{ answerText: '他人の目にはどうであれ自分の目で幸せなら良いんです', isCorrect: true, },
+				{ answerText: '南を見るのはどうであれ自分の目で幸せなら良いんです', isCorrect: false, },
+				{ answerText: '他人の目にはどうしても自分の目で幸せなら良いんです', isCorrect: false, },
 			],
+      hintWords: [
+        { korean: '남', japanese: '他人' },
+        { korean: '보기에', japanese: '-が見るに、-の目で' },
+        { korean: '어떻든', japanese: 'どうであれ' },
+      ],
     },
     {
       language: '日本語',
       questionText: '다정하고 싶어요. 다정은 공짜니까. 그냥 서로 좀 친절해도 되는 거잖아요?',
 			answerOptions: [
-				{ answerText: '優しくなりたいです。 優しさはタダだから。お互いにちょっと親切でも良いんじゃないですか。', isCorrect: true, correctness:'✕' },
-				{ answerText: '優しくなりたいです。 優しさはタダだから。お互いにちょっと親切になっても良いんじゃないですか。', isCorrect: false, correctness:'✕' },
-				{ answerText: '優しくなりたいです。 多点はタダだから。お互いにちょっと親切でも良いんじゃないですか。', isCorrect: false, correctness:'✕' },
-				{ answerText: '優しくなりたいです。 優しさはタダだから。西でちょっと親切でも良いんじゃないですか。', isCorrect: false, correctness:'〇' },
+				{ answerText: '優しくなりたいです。 優しさはタダだから。お互いにちょっと親切でも良いんじゃないですか。', isCorrect: true, },
+				{ answerText: '優しくなりたいです。 優しさはタダだから。お互いにちょっと親切になっても良いんじゃないですか。', isCorrect: false, },
+				{ answerText: '優しくなりたいです。 多点はタダだから。お互いにちょっと親切でも良いんじゃないですか。', isCorrect: false, },
+				{ answerText: '優しくなりたいです。 優しさはタダだから。西でちょっと親切でも良いんじゃないですか。', isCorrect: false, },
 			],
+      hintWords: [
+        { korean: '다정', japanese: '多情、優しいこと' },
+        { korean: '서로', japanese: 'お互い' },
+        { korean: '-아/어도 되다', japanese: '-してもよい' },
+      ],
     },
     {
       language: '韓国語',
       questionText: 'この近所でですね、一番強くて、一番タフで、一番すばらしくて、一番立派です。',
 			answerOptions: [
-				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 훌륭하고, 제일로 창해요.', isCorrect: false, correctness:'✕' },
-				{ answerText: '이 동네에서요, 제일로 새고요, 제일로 강하고, 제일로 훌륭하고, 제일로 장해요.', isCorrect: false, correctness:'✕' },
-				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 훌륭하고, 제일로 장해요.', isCorrect: true, correctness:'✕' },
-				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 후륭하고, 제일로 장해요.', isCorrect: false, correctness:'〇' },
+				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 훌륭하고, 제일로 창해요.', isCorrect: false, },
+				{ answerText: '이 동네에서요, 제일로 새고요, 제일로 강하고, 제일로 훌륭하고, 제일로 장해요.', isCorrect: false, },
+				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 훌륭하고, 제일로 장해요.', isCorrect: true, },
+				{ answerText: '이 동네에서요, 제일로 세고요, 제일로 강하고, 제일로 후륭하고, 제일로 장해요.', isCorrect: false, },
 			],
+      hintWords: [
+        { korean: '세다', japanese: '強い' },
+        { korean: '훌륭하다', japanese: '素晴らしい、立派だ' },
+        { korean: '장하다', japanese: '素晴らしい、立派だ' },
+      ],
     },
   ]
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  // const [showScore, setShowScore] = useState(false);
   const [score, setScore] =useState(0);
   const [visible, setVisible] = useState(false);
-  // const [correctness, setCorrectness] = useState('');
 
   const toggleOverlay = () => {
-    // if (isCorrect) {
       setVisible(!visible);
-    // } else {
-    //   setVisible(!visible);
-    // }
   }
 
   const showScoreScreen = () => {
@@ -106,9 +125,6 @@ export default function WhenTheCamelliaBloomsScreen(props) {
         />
         <Card containerStyle={{top: 70, height:'50%'}}>
           <Card.Title>Q.{currentQuestion + 1}</Card.Title>
-          <Text>
-            {score}
-          </Text>
           <Card.Divider/>
           <Text h5 style={{paddingBottom: 10}}>
             以下のセリフを{questions[currentQuestion].language}にしてみよう。
@@ -129,16 +145,17 @@ export default function WhenTheCamelliaBloomsScreen(props) {
             />
           ))}
         </View>
+        <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
+          <Text h2>ヒント</Text>
+          {questions[currentQuestion].hintWords.map((hintWord) => (
+            <Text h4>{hintWord.korean}：{hintWord.japanese}</Text>
+          ))}
+          <Button
+            title="閉じる"
+            onPress={toggleOverlay}
+          />
+        </Overlay>
       </ThemeProvider>
-
-      <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
-        <Text h2>ヒント</Text>
-        <Text h4>ヒント文</Text>
-        <Button
-          title="閉じる"
-          onPress={toggleOverlay}
-        />
-      </Overlay>
     </View>
   );
 }

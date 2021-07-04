@@ -89,17 +89,11 @@ export default function ItaewonClassScreen(props) {
   ]
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  // const [showScore, setShowScore] = useState(false);
   const [score, setScore] =useState(0);
   const [visible, setVisible] = useState(false);
-  // consttCorrectness] = useState('');
 
   const toggleOverlay = () => {
-    // if (isCorrect) {
       setVisible(!visible);
-    // } else {
-    //   setVisible(!visible);
-    // }
   }
 
   const showScoreScreen = () => {
@@ -136,9 +130,6 @@ export default function ItaewonClassScreen(props) {
         />
         <Card containerStyle={{top: 70, height:'50%'}}>
           <Card.Title>Q.{currentQuestion + 1}</Card.Title>
-          <Text>
-            {score}
-          </Text>
           <Card.Divider/>
           <Text h5 style={{paddingBottom: 10}}>
             以下のセリフを{questions[currentQuestion].language}にしてみよう。
@@ -159,18 +150,17 @@ export default function ItaewonClassScreen(props) {
             />
           ))}
         </View>
+        <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
+          <Text h2>ヒント</Text>
+          {questions[currentQuestion].hintWords.map((hintWord) => (
+            <Text h4>{hintWord.korean}：{hintWord.japanese}</Text>
+          ))}
+          <Button
+            title="閉じる"
+            onPress={toggleOverlay}
+          />
+        </Overlay>
       </ThemeProvider>
-
-      <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
-        <Text h2>ヒント</Text>
-        {questions[currentQuestion].hintWords.map((hintWord) => (
-          <Text h4>{hintWord.korean}：{hintWord.japanese}</Text>
-        ))}
-        <Button
-          title="閉じる"
-          onPress={toggleOverlay}
-        />
-      </Overlay>
     </View>
   );
 }
