@@ -16,7 +16,7 @@ export default function ScoreScreen({navigation}) {
       <ThemeProvider theme={theme}>
         <Header
           containerStyle={{ position: 'absolute', top: 0 }}
-          centerComponent={{ text: 'スタートアップ', style: { color: '#fff' } }}
+          centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff' } }}
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
@@ -26,11 +26,12 @@ export default function ScoreScreen({navigation}) {
         <Card containerStyle={{top: '30%', height:'50%'}}>
           <Card.Title>スコア</Card.Title>
           <Card.Divider/>
-          <Text h1 style={{marginBottom: 10}}>
-            {text}/5点
+          <Text h4 style={{marginBottom: 10, textAlign: 'center'}}>5点満点中</Text>
+          <Text h2 style={{marginBottom: 10, textAlign: 'center'}}>
+             {text}点
           </Text>
         </Card>
-        <View style={{top: '60%' }}>
+        <View style={{top: '60%', width:'50%', flex:1, textAlign:'center'}}>
           <Button
             title="トップに戻る"
             onPress={() => {
@@ -53,6 +54,6 @@ const theme = {
     raised: true,
   },
   colors: {
-    primary: '#9fc0d1',
+    primary: '#ffb6c1',
   },
 };

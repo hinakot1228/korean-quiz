@@ -71,7 +71,7 @@ export default function CrashLandingOnYouScreen(props) {
 			],
     },
     {
-      language: '日本語',
+      language: '韓国語',
       questionText: 'あなたが日常の中で探すことができて探さなければならない小さな幸せを逃さないでくれたら嬉しい。',
 			answerOptions: [
 				{ answerText: '당신이 일상 속에서 찾을 수 있고 찾아야 할 작은 행복들을 놓치지 말아줬으면 해요.', isCorrect: true, },
@@ -119,21 +119,21 @@ export default function CrashLandingOnYouScreen(props) {
   }
 
   return (
-    <View>
+    <View style={{ backgroundColor: '#FFFFFF', height: 1000}}>
       <ThemeProvider theme={theme}>
         <Header
-          containerStyle={{ position: 'absolute', top: 0 }}
-          centerComponent={{ text: '愛の不時着', style: { color: '#fff' } }}
+          containerStyle={{ position: 'absolute', top: 0, width: '100%' }}
+          centerComponent={{ text: '愛の不時着', style: { color: '#fff', fontSize:17 } }}
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
             onPress: () => navigation.navigate('Start')
           }}
         />
-        <Card containerStyle={{top: 70, height:'50%'}}>
+        <Card containerStyle={{top: 70, height:250}}>
           <Card.Title>Q.{currentQuestion + 1}</Card.Title>
-          <Card.Divider/>
-          <Text h5 style={{paddingBottom: 10}}>
+          <Card.Divider style={{marginBottom: 20}}/>
+          <Text h5 style={{paddingBottom: 30}}>
             以下のセリフを{questions[currentQuestion].language}にしてみよう。
           </Text>
           <Text h4 style={{textAlign: 'center'}}>
@@ -142,9 +142,10 @@ export default function CrashLandingOnYouScreen(props) {
           <Button
               title='ヒント'
               onPress={toggleOverlay}
-            />
+              containerStyle={{position:'absolute', top:180, left: 230,width: '30%'}}
+          />
         </Card>
-        <View >
+        <View style={{top: 90 }}>
           {questions[currentQuestion].answerOptions.map((answerOption) => (
             <Button
               title={answerOption.answerText}
@@ -152,14 +153,15 @@ export default function CrashLandingOnYouScreen(props) {
             />
           ))}
         </View>
-        <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
-          <Text h2>ヒント</Text>
+        <Overlay isVisible={visible} overlayStyle={{height: '60%', width: '85%', top: 50}}>
+          <Text h2 style={{marginTop: 20,marginLeft: 20,marginBottom: 20}}>ヒント</Text>
           {questions[currentQuestion].hintWords.map((hintWord) => (
-            <Text h4>{hintWord.korean}：{hintWord.japanese}</Text>
+            <Text h4 style={{marginLeft: 20,marginBottom: 20}}>{hintWord.korean}：{hintWord.japanese}</Text>
           ))}
           <Button
             title="閉じる"
             onPress={toggleOverlay}
+            containerStyle={{position:'absolute', bottom: 0, width: '97%'}}
           />
         </Overlay>
       </ThemeProvider>
@@ -177,6 +179,6 @@ const theme = {
     raised: true,
   },
   colors: {
-    primary: '#9fc0d1',
+    primary: '#ffb6c1',
   },
 };

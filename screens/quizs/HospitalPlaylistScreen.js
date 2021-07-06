@@ -16,12 +16,8 @@ export default function ItaewonClassScreen(props) {
 				{ answerText: '너는 요즘 널 위해 무엇을 해 주니?', },
 			],
       hintWords: [
-				{ korean: '을/를 위해', japanese: '' },
-				{ korean: '아/어 주다', japanese: '' },
-				{ korean: '', japanese: '' },
-				{ korean: '', japanese: '' },
-				{ korean: '', japanese: '' },
-				{ korean: '', japanese: '' },
+				{ korean: '을/를 위해', japanese: '～のために' },
+				{ korean: '아/어 주다', japanese: 'してあげる/くれる' },
 			],
     },
     {
@@ -114,21 +110,21 @@ export default function ItaewonClassScreen(props) {
   }
 
   return (
-    <View>
+    <View  style={{ backgroundColor: '#FFFFFF', height: 1000}}>
       <ThemeProvider theme={theme}>
         <Header
-          containerStyle={{ position: 'absolute', top: 0 }}
-          centerComponent={{ text: '賢い医師生活', style: { color: '#fff' } }}
+          containerStyle={{ position: 'absolute', top: 0, width: '100%' }}
+          centerComponent={{ text: '賢い医師生活', style: { color: '#fff', fontSize:17 } }}
           rightComponent={{ 
             icon: 'home', 
             color: '#fff',
             onPress: () => navigation.navigate('Start')
           }}
         />
-        <Card containerStyle={{top: 70, height:'50%'}}>
+        <Card containerStyle={{top: 70, height:250}}>
           <Card.Title>Q.{currentQuestion + 1}</Card.Title>
-          <Card.Divider/>
-          <Text h5 style={{paddingBottom: 10}}>
+          <Card.Divider style={{marginBottom: 20}}/>
+          <Text h5 style={{paddingBottom: 30}}>
             以下のセリフを{questions[currentQuestion].language}にしてみよう。
           </Text>
           <Text h4 style={{textAlign: 'center'}}>
@@ -137,9 +133,10 @@ export default function ItaewonClassScreen(props) {
           <Button
               title='ヒント'
               onPress={toggleOverlay}
-            />
+              containerStyle={{position:'absolute', top:180, left: 230,width: '30%'}}
+          />
         </Card>
-        <View style={{top: '16%' }}>
+        <View style={{top: 90 }}>
           {questions[currentQuestion].answerOptions.map((answerOption) => (
             <Button
               title={answerOption.answerText}
@@ -147,14 +144,15 @@ export default function ItaewonClassScreen(props) {
             />
           ))}
         </View>
-        <Overlay isVisible={visible} overlayStyle={{height: '70%', width: '85%', top: 50}}>
-          <Text h2>ヒント</Text>
+        <Overlay isVisible={visible} overlayStyle={{height: '60%', width: '85%', top: 50}}>
+          <Text h2 style={{marginTop: 20,marginLeft: 20,marginBottom: 20}}>ヒント</Text>
           {questions[currentQuestion].hintWords.map((hintWord) => (
-            <Text h4>{hintWord.korean}：{hintWord.japanese}</Text>
+            <Text h4 style={{marginLeft: 20,marginBottom: 20}}>{hintWord.korean}：{hintWord.japanese}</Text>
           ))}
           <Button
             title="閉じる"
             onPress={toggleOverlay}
+            containerStyle={{position:'absolute', bottom: 0, width: '97%'}}
           />
         </Overlay>
       </ThemeProvider>
@@ -172,6 +170,6 @@ const theme = {
     raised: true,
   },
   colors: {
-    primary: '#9fc0d1',
+    primary: '#ffb6c1',
   },
 };

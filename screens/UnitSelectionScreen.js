@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { ThemeProvider,Header, Button, Icon } from 'react-native-elements';
+import { HeaderHeightContext } from 'react-navigation-stack';
 
 const theme = {
   Button: {
     containerStyle: {
       margin: 30,
     },
+    titleStyle: {
+      fontSize: 23
+    },
     raised: true,
   },
   colors: {
-    primary: '#9fc0d1',
+    primary: '#ffb6c1',
   },
 };
 
@@ -18,6 +22,7 @@ export default class UnitSelectionScreen extends Component {
     render() {
       return (
         <ThemeProvider theme={theme}>
+          <View  style={{ backgroundColor: '#FFFFFF', height: 1000}}>
           <Header
             leftComponent={{ 
               icon: 'chevron-left', 
@@ -26,7 +31,7 @@ export default class UnitSelectionScreen extends Component {
                 this.props.navigation.navigate('Start')
               },
              }}
-            centerComponent={{ text: 'ドラマの名言で覚える韓国語', style: { color: '#fff' } }}
+            centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
             rightComponent={{ 
               icon: 'home', 
               color: '#fff',
@@ -65,16 +70,10 @@ export default class UnitSelectionScreen extends Component {
               this.props.navigation.navigate('WhenTheCamelliaBlooms')
             }}
            />
+           </View>
         </ThemeProvider>
       );
     }
   }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+
