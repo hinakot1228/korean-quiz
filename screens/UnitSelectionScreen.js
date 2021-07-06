@@ -22,7 +22,7 @@ export default class UnitSelectionScreen extends Component {
     render() {
       return (
         <ThemeProvider theme={theme}>
-          <View  style={{ backgroundColor: '#FFFFFF', height: 1000}}>
+          <View  style={{ backgroundColor: '#FFFFFF', height: 800}}>
           <Header
             leftComponent={{ 
               icon: 'chevron-left', 
