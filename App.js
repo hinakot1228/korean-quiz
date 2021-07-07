@@ -3,7 +3,7 @@ import { createAppContainer, NavigationContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import StartScreen from './screens/startScreen';
 import UnitSelectionScreen from './screens/UnitSelectionScreen';
-import QuestionScreen from './screens/questionScreen';
+// import QuestionScreen from './screens/questionScreen';
 import CorrectAnswerScreen from './screens/correctAnswerScreen';
 import IncorrectAnswerScreen from './screens/incorrectAnswerScreen';
 import ScoreScreen from './screens/scoreScreen';
@@ -17,7 +17,7 @@ const MainStack = createStackNavigator(
   {
     Start: StartScreen,
     UnitSelection: UnitSelectionScreen,
-    Question: QuestionScreen,
+    // Question: QuestionScreen,
     CorrectAnswer: CorrectAnswerScreen,
     IncorrectAnswer: IncorrectAnswerScreen,
     Score: ScoreScreen,

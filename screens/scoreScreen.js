@@ -5,11 +5,11 @@ import {ThemeProvider,Card, ListItem, Header, Button, Icon, Text, PricingCard, D
 
 export default function ScoreScreen({navigation}) {
   const [text, setText] = useState("");
-  const { score } = navigation.state.params;
-  const [scoreText, setScoreText] = useState("");
+  const { correctScore } = navigation.state.params;
+  // const [scoreText, setScoreText] = useState("");
 
   useEffect(() => {
-    setText(score);
+    setText(correctScore);
   }, []);
 
   // useEffect(() => {

@@ -72,9 +72,9 @@ export default function ItaewonClassScreen(props) {
       language: '日本語',
       questionText: '깊은 어둠에 가둬봐라 나는 홀로 빛나는 돌덩이',
 			answerOptions: [
-				{ answerText: '甲は闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: false },
-				{ answerText: '深い闇に閉じこめておけ 私は一人で借金が出る石ころ', isCorrect: false },
-				{ answerText: '深い闇に行け 私は一人で輝く石ころ', isCorrect: false },
+				{ answerText: '甲は闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: true },
+				{ answerText: '深い闇に閉じこめておけ 私は一人で借金が出る石ころ', isCorrect: true },
+				{ answerText: '深い闇に行け 私は一人で輝く石ころ', isCorrect: true },
 				{ answerText: '深い闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: true },
 			],
       hintWords: [
@@ -96,23 +96,18 @@ export default function ItaewonClassScreen(props) {
       setVisible(!visible);
   }
 
-  const showScoreScreen = () => {
-    navigation.navigate('Score', {score});
-  }
-
   const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      setScore(score + 1);
-    } else {
-      setScore(score);
-    }
-
+    if (isCorrect==true) {
+      var correctScore = score + 1
+      setScore(correctScore);
+      console.log(correctScore);
+    } 
     const nextQuestion = currentQuestion + 1;
-
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      showScoreScreen();
+      navigation.navigate('Score', {correctScore});
+      console.log(correctScore);
     }
   }
 
@@ -142,6 +137,7 @@ export default function ItaewonClassScreen(props) {
               onPress={toggleOverlay}
               containerStyle={{position:'absolute', top:180, left: 230,width: '30%'}}
           />
+          <Text>{score}</Text>
         </Card>
         <View style={{top: 90 }}>
           {questions[currentQuestion].answerOptions.map((answerOption) => (
