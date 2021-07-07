@@ -72,9 +72,9 @@ export default function ItaewonClassScreen(props) {
       language: '日本語',
       questionText: '깊은 어둠에 가둬봐라 나는 홀로 빛나는 돌덩이',
 			answerOptions: [
-				{ answerText: '甲は闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: true },
-				{ answerText: '深い闇に閉じこめておけ 私は一人で借金が出る石ころ', isCorrect: true },
-				{ answerText: '深い闇に行け 私は一人で輝く石ころ', isCorrect: true },
+				{ answerText: '甲は闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: false },
+				{ answerText: '深い闇に閉じこめておけ 私は一人で借金が出る石ころ', isCorrect: false },
+				{ answerText: '深い闇に行け 私は一人で輝く石ころ', isCorrect: false },
 				{ answerText: '深い闇に閉じこめておけ 私は一人で輝く石ころ', isCorrect: true },
 			],
       hintWords: [
@@ -91,6 +91,8 @@ export default function ItaewonClassScreen(props) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] =useState(0);
   const [visible, setVisible] = useState(false);
+  const [scoreScore, setScoreScore] = useState(0);
+
 
   const toggleOverlay = () => {
       setVisible(!visible);
@@ -100,14 +102,17 @@ export default function ItaewonClassScreen(props) {
     if (isCorrect==true) {
       var correctScore = score + 1
       setScore(correctScore);
+      // console.log(correctScore);
+    } else {
+      var correctScore = score;
       console.log(correctScore);
-    } 
+    }
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      navigation.navigate('Score', {correctScore});
       console.log(correctScore);
+      navigation.navigate('Score', {correctScore});
     }
   }
 

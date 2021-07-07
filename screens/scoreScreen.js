@@ -6,24 +6,25 @@ import {ThemeProvider,Card, ListItem, Header, Button, Icon, Text, PricingCard, D
 export default function ScoreScreen({navigation}) {
   const [text, setText] = useState("");
   const { correctScore } = navigation.state.params;
-  // const [scoreText, setScoreText] = useState("");
+  const [scoreText, setScoreText] = useState("");
 
   useEffect(() => {
     setText(correctScore);
   }, []);
 
-  // useEffect(() => {
-  //   const a = score;
-  //   if(a==5) {
-  //     setScoreText("5");
-  //   }
-  //   else if(3<=a<=4) {
-  //     setScoreText("3-4");
-  //   }
-  //   else if(0<=a<=2) {
-  //     setScoreText("0-2");
-  //   }
-  // }, []);
+  useEffect(() => {
+    const a = correctScore;
+    console.log(a);
+    if(a==5) {
+      setScoreText("5");
+    }
+    else if(2<a) {
+      setScoreText("3-4");
+    }
+    else {
+      setScoreText("0-2");
+    }
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -42,7 +43,7 @@ export default function ScoreScreen({navigation}) {
         <Text h2 style={{marginBottom: 50,}}>
           {text}点
         </Text>
-        {/* <Text style={{marginBottom: 100}}>{scoreText}</Text> */}
+        <Text style={{marginBottom: 100}}>{scoreText}</Text>
         <Button
           title="トップに戻る >>"
                   onPress={() => {
