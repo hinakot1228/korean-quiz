@@ -12,6 +12,7 @@ export default function ScoreScreen({navigation}) {
     setText(correctScore);
   }, []);
 
+  
   useEffect(() => {
     const a = correctScore;
     console.log(a);
