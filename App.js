@@ -32,7 +32,7 @@ const MainStack = createStackNavigator(
 const AppContainer = createAppContainer(MainStack)
 
 export default class App extends Component {
-
+      
   render() {
     return (
       <AppContainer />

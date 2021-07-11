@@ -142,7 +142,6 @@ export default function ItaewonClassScreen(props) {
               onPress={toggleOverlay}
               containerStyle={{position:'absolute', top:180, left: 230,width: '30%'}}
           />
-          <Text>{score}</Text>
         </Card>
         <View style={{top: 90 }}>
           {questions[currentQuestion].answerOptions.map((answerOption) => (

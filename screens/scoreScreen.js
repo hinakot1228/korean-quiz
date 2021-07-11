@@ -17,13 +17,13 @@ export default function ScoreScreen({navigation}) {
     const a = correctScore;
     console.log(a);
     if(a==5) {
-      setScoreText("5");
+      setScoreText("5점 만점에 5점!! 잘했어!!");
     }
     else if(2<a) {
-      setScoreText("3-4");
+      setScoreText("조금 만 더 힘내!!");
     }
     else {
-      setScoreText("0-2");
+      setScoreText("화이팅!");
     }
   }, []);
 
