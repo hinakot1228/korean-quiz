@@ -140,7 +140,7 @@ export default function ItaewonClassScreen(props) {
           <Button
               title='ヒント'
               onPress={toggleOverlay}
-              containerStyle={{position:'absolute', top:180, left: 230,width: '30%'}}
+              containerStyle={{position:'absolute', top:180, right: 0,width: '30%'}}
           />
         </Card>
         <View style={{top: 90 }}>
@@ -159,8 +159,8 @@ export default function ItaewonClassScreen(props) {
           <Button
             title="閉じる"
             onPress={toggleOverlay}
-            containerStyle={{position:'absolute', bottom: 0, width: '97%'}}
-          />
+            containerStyle={{position:'absolute', bottom: 0, left:'50%', width: '90%', textAlign: 'center'}}
+          /> 
         </Overlay>
       </ThemeProvider>
     </View>
