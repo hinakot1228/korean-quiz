@@ -4,8 +4,6 @@ import { createStackNavigator } from 'react-navigation-stack';
 import StartScreen from './screens/startScreen';
 import UnitSelectionScreen from './screens/UnitSelectionScreen';
 // import QuestionScreen from './screens/questionScreen';
-import CorrectAnswerScreen from './screens/correctAnswerScreen';
-import IncorrectAnswerScreen from './screens/incorrectAnswerScreen';
 import ScoreScreen from './screens/scoreScreen';
 import ItaewonClassScreen from './screens/quizs/ItaewonClassScreen';
 import CrashLandingOnYouScreen from './screens/quizs/CrashLandingOnYouScreen';
@@ -18,8 +16,6 @@ const MainStack = createStackNavigator(
     Start: StartScreen,
     UnitSelection: UnitSelectionScreen,
     // Question: QuestionScreen,
-    CorrectAnswer: CorrectAnswerScreen,
-    IncorrectAnswer: IncorrectAnswerScreen,
     Score: ScoreScreen,
     ItaewonClass: ItaewonClassScreen,
     CrashLandingOnYou: CrashLandingOnYouScreen,

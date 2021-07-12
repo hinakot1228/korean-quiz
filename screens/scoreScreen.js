@@ -31,7 +31,7 @@ export default function ScoreScreen({navigation}) {
     <ThemeProvider theme={theme}>
       <View style={styles.container}>
         <Header
-          containerStyle={{ position: 'absolute', top: 0 }}
+          containerStyle={{ position: 'absolute', top: 0, width: '100%' }}
           centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
           rightComponent={{ 
             icon: 'home', 

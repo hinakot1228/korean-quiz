@@ -84,28 +84,28 @@ export default function ItaewonClassScreen(props) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] =useState(0);
   const [visible, setVisible] = useState(false);
+  const [scoreScore, setScoreScore] = useState(0);
+
 
   const toggleOverlay = () => {
       setVisible(!visible);
   }
 
-  const showScoreScreen = () => {
-    navigation.navigate('Score', {score});
-  }
-
   const handleAnswerOptionClick = (isCorrect) => {
-    if (isCorrect) {
-      setScore(score + 1);
+    if (isCorrect==true) {
+      var correctScore = score + 1
+      setScore(correctScore);
+      // console.log(correctScore);
     } else {
-      setScore(score);
+      var correctScore = score;
+      console.log(correctScore);
     }
-
     const nextQuestion = currentQuestion + 1;
-
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      showScoreScreen();
+      console.log(correctScore);
+      navigation.navigate('Score', {correctScore});
     }
   }
 
