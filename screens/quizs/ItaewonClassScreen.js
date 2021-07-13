@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { ThemeProvider, Card, Header, Button, Text, Overlay } from 'react-native-elements';
+import HeaderComponent from '../../components/Header';
 
 export default function ItaewonClassScreen(props) {
   const {navigation} = props;
@@ -117,10 +118,10 @@ export default function ItaewonClassScreen(props) {
   }
 
   return (
-    <View  style={{ backgroundColor: '#FFFFFF', height: 1000}}>
-      <ThemeProvider theme={theme}>
+    <View  style={{ backgroundColor: '#FFFFFF', height: '100%'}}>
+      <View style={{flex: 1}}>
         <Header
-          containerStyle={{ position: 'absolute', top: 0, width: '100%' }}
+          containerStyle={{ width: '100%' ,height: '100%',backgroundColor: '#ffb6c1',}}
           centerComponent={{ text: '梨泰院クラス', style: { color: '#fff', fontSize:17 } }}
           rightComponent={{ 
             icon: 'home', 
@@ -128,31 +129,44 @@ export default function ItaewonClassScreen(props) {
             onPress: () => navigation.navigate('Start')
           }}
         />
-        <Card containerStyle={{top: 70, height:250}}>
-          <Card.Title>Q.{currentQuestion + 1}</Card.Title>
-          <Card.Divider style={{marginBottom: 20}}/>
-          <Text h5 style={{paddingBottom: 30}}>
-            以下のセリフを{questions[currentQuestion].language}にしてみよう。
-          </Text>
-          <Text h4 style={{textAlign: 'center'}}>
-            ❝{questions[currentQuestion].questionText}❞
-          </Text>
-          <Button
+      </View>
+      <View style={{flex: 5, justifyContent: 'space-around', backgroundColor: 'white', padding:'3%'}} >
+        <View style={{  backgroundColor: 'white', height: '100%', padding:'5%', borderColor: 'gray', borderWidth: 1}}>
+          <View style={{flex: 1, justifyContent: 'center',}}>
+            <Text>Q.{currentQuestion + 1}</Text>
+          </View>
+          <View style={{flex:1, justifyContent: 'center',}}>
+            <Text >
+              以下のセリフを{questions[currentQuestion].language}にしてみよう。
+            </Text>
+          </View>
+          <View  style={{ flex:4, justifyContent:'center'}}>
+            <Text h4 style={{textAlign: 'center'}}>
+              ❝{questions[currentQuestion].questionText}❞
+            </Text>
+          </View>
+          <View style={{ flex:1 }}>
+            <Button
               title='ヒント'
               onPress={toggleOverlay}
-              containerStyle={{position:'absolute', top:180, left: 230,width: '30%'}}
-          />
-          <Text>{score}</Text>
-        </Card>
-        <View style={{top: 90 }}>
-          {questions[currentQuestion].answerOptions.map((answerOption) => (
-            <Button
-              title={answerOption.answerText}
-              onPress={() => handleAnswerOptionClick(answerOption.isCorrect)}
+              containerStyle={{width: '30%', alignSelf: 'flex-end'}}
             />
+          </View>
+        </View>
+      </View>
+      <View style={{flex: 5, backgroundColor: 'rgb(32, 137, 220)', height: '100%'}} >
+        <View style={{height: '100%'}}>
+          {questions[currentQuestion].answerOptions.map((answerOption) => (
+            <View style={{flex:1, height: '100%', justifyContent: 'center', borderBottomColor: 'black', borderBottomWidth: 1}}>
+              <Button
+                title={answerOption.answerText}
+                onPress={() => handleAnswerOptionClick(answerOption.isCorrect)}
+              />
+            </View>
           ))}
         </View>
-        <Overlay isVisible={visible} overlayStyle={{height: '60%', width: '85%', top: 50}}>
+      </View>
+      <Overlay isVisible={visible} overlayStyle={{height: '60%', width: '85%', top: 50}}>
           <Text h2 style={{marginTop: 20,marginLeft: 20,marginBottom: 20}}>ヒント</Text>
           {questions[currentQuestion].hintWords.map((hintWord) => (
             <Text h4 style={{marginLeft: 20,marginBottom: 20}}>{hintWord.korean}：{hintWord.japanese}</Text>
@@ -160,24 +174,9 @@ export default function ItaewonClassScreen(props) {
           <Button
             title="閉じる"
             onPress={toggleOverlay}
-            containerStyle={{position:'absolute', bottom: 0, width: '97%'}}
+            containerStyle={{position:'absolute', bottom: 0, width: '50%'}}
           />
         </Overlay>
-      </ThemeProvider>
     </View>
   );
 }
-
-const theme = {
-  Button: {
-    containerStyle: {
-      marginLeft: 15,
-      marginRight: 15,
-      marginBottom: 15,
-    },
-    raised: true,
-  },
-  colors: {
-    primary: '#ffb6c1',
-  },
-};

@@ -6,7 +6,7 @@ import { HeaderHeightContext } from 'react-navigation-stack';
 const theme = {
   Button: {
     containerStyle: {
-      margin: 30,
+      margin: '6%',
     },
     titleStyle: {
       fontSize: 23
@@ -22,7 +22,7 @@ export default class UnitSelectionScreen extends Component {
     render() {
       return (
         <ThemeProvider theme={theme}>
-          <View  style={{ backgroundColor: '#FFFFFF', height: 800}}>
+          <View  style={{ backgroundColor: '#FFFFFF', height: '100%'}}>
           <Header
             leftComponent={{ 
               icon: 'chevron-left', 
@@ -40,6 +40,7 @@ export default class UnitSelectionScreen extends Component {
               },
             }}
           />
+          <View style={{flex: 1, justifyContent: 'center'}}>
           <Button 
             title="梨泰院クラス"
             onPress={() => {
@@ -70,6 +71,7 @@ export default class UnitSelectionScreen extends Component {
               this.props.navigation.navigate('WhenTheCamelliaBlooms')
             }}
            />
+           </View>
            </View>
         </ThemeProvider>
       );
