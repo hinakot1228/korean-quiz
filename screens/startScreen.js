@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ThemeProvider,Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider} from 'react-native-elements';
+import { ThemeProvider,Card, ListItem, Header, Button, Icon, Text, PricingCard, Divider, Image} from 'react-native-elements';
 
 const theme = {
   Button: {
@@ -19,18 +19,35 @@ export default class startScreen extends Component {
       return (
         <ThemeProvider theme={theme}>
           <View style={styles.container}>
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 1}}>
-              <Text h3 style={{paddingBottom:10}}>ドラマの名言で覚える</Text>
+            <View style={{flex: 1, width: '100%'}}>
+              <Header
+                containerStyle={{ width: '100%' ,height: '100%', backgroundColor: '#ffb6c1',}}
+                centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
+                rightComponent={{ 
+                  icon: 'home', 
+                  color: '#fff',
+                  onPress: () => navigation.navigate('Start')
+                }}
+              />
             </View>
-            <Divider orientation="horizontal" />
-            <Text h1 style={{marginTop:10, marginBottom: 100}}>韓　国　語</Text>
-            <Button
-              title="始める  >>"
-              onPress={() => {
-                this.props.navigation.navigate('UnitSelection')
-              }}
-              buttonStyle={{width: 130, fontSize: 100}}
-            />
+            <View style={{flex: 7, justifyContent: 'center', alignItems: 'center'}}>
+              <Image
+                style={{
+                  width: 150,
+                  height: 150
+                }}
+                source={require('../assets/icon.png')}
+              />
+            </View>
+            <View style={{flex: 3, alignItems: 'center'}}>
+              <Button
+                title="はじめる >>"
+                onPress={() => {
+                  this.props.navigation.navigate('UnitSelection')
+                }}
+                containerStyle={{width: '100%'}}
+              />
+            </View>
           </View>
         </ThemeProvider>
       )
