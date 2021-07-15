@@ -24,15 +24,10 @@ export default class UnitSelectionScreen extends Component {
         <ThemeProvider theme={theme}>
           <View  style={{ backgroundColor: '#FFFFFF', height: '100%'}}>
             <View style={{flex: 1}}>
-              <Header
-                containerStyle={{ width: '100%' ,height: '100%',backgroundColor: '#ffb6c1',}}
-                centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
-                rightComponent={{ 
-                  icon: 'home', 
-                  color: '#fff',
-                  onPress: () => navigation.navigate('Start')
-                }}
-              />
+            <Header
+              containerStyle={{ width: '100%' ,height: '100%',backgroundColor: '#ffb6c1',}}
+              centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
+            />
             </View>
             <View style={{flex: 10, justifyContent: 'space-around'}}>
               <Button 

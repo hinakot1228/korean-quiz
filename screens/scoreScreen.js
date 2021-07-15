@@ -34,11 +34,6 @@ export default function ScoreScreen({navigation}) {
           <Header
             containerStyle={{ width: '100%' ,height: '100%', backgroundColor: '#ffb6c1',}}
             centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
-            rightComponent={{ 
-              icon: 'home', 
-              color: '#fff',
-              onPress: () => navigation.navigate('Start')
-            }}
           />
         </View>
         <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
@@ -56,10 +51,10 @@ export default function ScoreScreen({navigation}) {
         <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
           <Button
             title="トップに戻る >>"
-                    onPress={() => {
-                      navigation.navigate('Start')
-                    }}
-            buttonStyle={{width: 180, fontSize: 100}}
+            onPress={() => {
+              navigation.navigate('Start')
+            }}
+            containerStyle={{width: '100%'}}
           />
         </View>
       </View>
