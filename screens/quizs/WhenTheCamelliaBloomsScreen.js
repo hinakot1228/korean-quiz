@@ -110,67 +110,82 @@ export default function WhenTheCamelliaBloomsScreen(props) {
       navigation.navigate('Score', {correctScore});
     }
   }
+  const theme = {
+    colors: {
+      primary: '#ffb6c1',
+    },
+  };
 
   return (
-    <View  style={{ backgroundColor: '#FFFFFF', height: '100%'}}>
-      <View style={{flex: 1}}>
-        <Header
-          containerStyle={{ width: '100%' ,height: '100%',backgroundColor: '#ffb6c1',}}
-          centerComponent={{ text: '梨泰院クラス', style: { color: '#fff', fontSize:17 } }}
-          rightComponent={{ 
-            icon: 'home', 
-            color: '#fff',
-            onPress: () => navigation.navigate('Start')
-          }}
-        />
-      </View>
-      <View style={{flex: 5, justifyContent: 'space-around', backgroundColor: 'white', padding:'3%'}} >
-        <View style={{  backgroundColor: 'white', height: '100%', padding:'5%', borderColor: 'gray', borderWidth: 1}}>
-          <View style={{flex: 1, justifyContent: 'center',}}>
-            <Text>Q.{currentQuestion + 1}</Text>
-          </View>
-          <View style={{flex:1, justifyContent: 'center',}}>
-            <Text >
-              以下のセリフを{questions[currentQuestion].language}にしてみよう。
-            </Text>
-          </View>
-          <View  style={{ flex:4, justifyContent:'center'}}>
-            <Text h4 style={{textAlign: 'center'}}>
-              ❝{questions[currentQuestion].questionText}❞
-            </Text>
-          </View>
-          <View style={{ flex:1 }}>
-            <Button
-              title='ヒント'
-              onPress={toggleOverlay}
-              containerStyle={{width: '30%', alignSelf: 'flex-end'}}
-            />
-          </View>
+    <ThemeProvider theme={theme}>
+      <View  style={{ backgroundColor: '#FFFFFF', height: '100%'}}>
+        <View style={{flex: 1}}>
+          <Header
+            containerStyle={{ width: '100%' ,height: '100%',backgroundColor: '#ffb6c1',}}
+            centerComponent={{ text: '椿の花咲く頃', style: { color: '#fff', fontSize:17 } }}
+            rightComponent={{ 
+              icon: 'home', 
+              color: '#fff',
+              onPress: () => navigation.navigate('Start')
+            }}
+          />
         </View>
-      </View>
-      <View style={{flex: 5, backgroundColor: 'rgb(32, 137, 220)', height: '100%'}} >
-        <View style={{height: '100%'}}>
-          {questions[currentQuestion].answerOptions.map((answerOption) => (
-            <View style={{flex:1, height: '100%', justifyContent: 'center', borderBottomColor: 'black', borderBottomWidth: 1}}>
+        <View style={{flex: 5, justifyContent: 'space-around', backgroundColor: 'white', padding:'3%'}} >
+          <View style={{  backgroundColor: 'white', height: '100%', padding:'5%', borderColor: 'gray', borderWidth: 2}}>
+            <View style={{flex: 1, justifyContent: 'center',}}>
+              <Text>Q.{currentQuestion + 1}</Text>
+            </View>
+            <View style={{flex:1, justifyContent: 'center',}}>
+              <Text >
+                以下のセリフを{questions[currentQuestion].language}にしてみよう。
+              </Text>
+            </View>
+            <View  style={{ flex:4, justifyContent:'center'}}>
+              <Text h4 style={{textAlign: 'center'}}>
+                ❝{questions[currentQuestion].questionText}❞
+              </Text>
+            </View>
+            <View style={{ flex:1 }}>
               <Button
-                title={answerOption.answerText}
-                onPress={() => handleAnswerOptionClick(answerOption.isCorrect)}
+                title='ヒント'
+                onPress={toggleOverlay}
+                containerStyle={{width: '30%', alignSelf: 'flex-end'}}
               />
             </View>
-          ))}
+          </View>
         </View>
-      </View>
-      <Overlay isVisible={visible} overlayStyle={{height: '60%', width: '85%', top: 50}}>
-          <Text h2 style={{marginTop: 20,marginLeft: 20,marginBottom: 20}}>ヒント</Text>
-          {questions[currentQuestion].hintWords.map((hintWord) => (
-            <Text h4 style={{marginLeft: 20,marginBottom: 20}}>{hintWord.korean}：{hintWord.japanese}</Text>
-          ))}
-          <Button
-            title="閉じる"
-            onPress={toggleOverlay}
-            containerStyle={{position:'absolute', bottom: 0, width: '50%'}}
-          />
+        <View style={{flex: 5, backgroundColor: '#ffb6c1', height: '100%'}} >
+          <View style={{height: '100%'}}>
+            {questions[currentQuestion].answerOptions.map((answerOption) => (
+              <View style={{flex:1, height: '100%', justifyContent: 'center', borderBottomColor: 'gray', borderBottomWidth: 2}}>
+                <Button
+                  title={answerOption.answerText}
+                  onPress={() => handleAnswerOptionClick(answerOption.isCorrect)}
+                />
+              </View>
+            ))}
+          </View>
+        </View>
+        <Overlay isVisible={visible} overlayStyle={{height: '60%', width: '85%', top: 50}}>
+          <View style={{flex: 1, justifyContent: 'center'}}>
+            <View>
+            <Text h2 style={{textAlign: 'center'}}>ヒント</Text>
+            </View>
+          </View>
+          <View style={{flex: 4}}>
+            {questions[currentQuestion].hintWords.map((hintWord) => (
+              <Text h4 style={{marginLeft: 20,marginBottom: 20}}>{hintWord.korean}：{hintWord.japanese}</Text>
+            ))}
+          </View>
+          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+              <Button
+                title="閉じる"
+                onPress={toggleOverlay}
+                containerStyle={{width: '50%'}}
+              />
+          </View>
         </Overlay>
-    </View>
+      </View>
+    </ThemeProvider>
   );
 }
