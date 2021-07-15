@@ -30,28 +30,38 @@ export default function ScoreScreen({navigation}) {
   return (
     <ThemeProvider theme={theme}>
       <View style={styles.container}>
-        <Header
-          containerStyle={{ position: 'absolute', top: 0, width: '100%' }}
-          centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
-          rightComponent={{ 
-            icon: 'home', 
-            color: '#fff',
-            onPress: () => navigation.navigate('Start')
-          }}
-        />
-        <Text h3 style={{paddingBottom:100}}>スコア</Text>
-        <Text h4 style={{marginBottom: 10,}}>5点満点中</Text>
-        <Text h2 style={{marginBottom: 50,}}>
-          {text}点
-        </Text>
-        <Text style={{marginBottom: 100}}>{scoreText}</Text>
-        <Button
-          title="トップに戻る >>"
-                  onPress={() => {
-                    navigation.navigate('Start')
-                  }}
-          buttonStyle={{width: 180, fontSize: 100}}
-        />
+        <View style={{flex: 1, width: '100%'}}>
+          <Header
+            containerStyle={{ width: '100%' ,height: '100%', backgroundColor: '#ffb6c1',}}
+            centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
+            rightComponent={{ 
+              icon: 'home', 
+              color: '#fff',
+              onPress: () => navigation.navigate('Start')
+            }}
+          />
+        </View>
+        <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
+          <Text h3>スコア</Text>
+        </View>
+        <View style={{flex: 2, justifyContent: 'center', alignItems: 'center'}}>
+          <Text h4>5点満点中</Text>
+          <Text h2>
+            {text}点
+          </Text>
+        </View>
+        <View style={{flex: 2, justifyContent: 'space-around', alignItems: 'center'}}>
+          <Text>{scoreText}</Text>
+        </View>
+        <View style={{flex: 3, justifyContent: 'center', alignItems: 'center'}}>
+          <Button
+            title="トップに戻る >>"
+                    onPress={() => {
+                      navigation.navigate('Start')
+                    }}
+            buttonStyle={{width: 180, fontSize: 100}}
+          />
+        </View>
       </View>
     </ThemeProvider>
   );

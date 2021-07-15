@@ -11,6 +11,8 @@ import HospitalPlaylistScreen from './screens/quizs/HospitalPlaylistScreen';
 import StartUpScreen from './screens/quizs/StartUpScreen';
 import WhenTheCamelliaBloomsScreen from './screens/quizs/WhenTheCamelliaBloomsScreen';
 
+
+
 const MainStack = createStackNavigator(
   {
     Start: StartScreen,
@@ -22,6 +24,12 @@ const MainStack = createStackNavigator(
     HospitalPlaylist: HospitalPlaylistScreen,
     StartUp: StartUpScreen,
     WhenTheCamelliaBlooms: WhenTheCamelliaBloomsScreen,
+  },
+  {
+    headerMode: "none",
+    navigationOptions: {
+      headerVisible: false,
+    },
   }
 )
 
