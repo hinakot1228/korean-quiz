@@ -23,11 +23,6 @@ export default class startScreen extends Component {
               <Header
                 containerStyle={{ width: '100%' ,height: '100%', backgroundColor: '#ffb6c1',}}
                 centerComponent={{ text: 'ドラマのなかの韓国語', style: { color: '#fff', fontSize:17 } }}
-                rightComponent={{ 
-                  icon: 'home', 
-                  color: '#fff',
-                  onPress: () => navigation.navigate('Start')
-                }}
               />
             </View>
             <View style={{flex: 7, justifyContent: 'center', alignItems: 'center'}}>
