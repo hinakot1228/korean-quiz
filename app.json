@@ -21,8 +21,9 @@
       "bundleIdentifier": "jp.co.user.KoreanQuizApp"
     },
     "android": {
+      "package": "hinakot1228.github.io.hinako.koreanquizapp",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       }
     },
